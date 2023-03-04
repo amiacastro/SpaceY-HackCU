@@ -1,7 +1,7 @@
 import React from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, SafeAreaView, TouchableHighlight, TextInput } from 'react-native';
-import { COLORS, SIZES} from '../constants';
+import { COLORS, SIZES, FONTS} from '../constants';
 export default function Login() {
   const loginPress = () => console.log("Log in pressed");
   const [username, onChangeUsername] = React.useState('');
@@ -28,6 +28,7 @@ export default function Login() {
           underlayColor="#DDDDDD">
           <Text style={styles.loginText}>Log In</Text>
       </TouchableHighlight>
+      <Text style={styles.createAccount}>New to Huddle? Create An Account</Text>
       <StatusBar style="auto" />
     </SafeAreaView>
   );
@@ -42,7 +43,7 @@ const styles = StyleSheet.create({
   },
   title:{
     fontSize: SIZES.title,
-    paddingBottom: "15%",
+    paddingBottom: "10%",
     color: COLORS.secondary,
     textAlign: 'center',
   },
@@ -84,6 +85,12 @@ const styles = StyleSheet.create({
     textAlign:'center',
     paddingLeft : 10,
     paddingRight : 10,
+    fontSize: SIZES.medium
+  },
+  createAccount:{
+    paddingTop: "10%",
+    color: COLORS.white,
+    textDecorationLine: 'underline',
     fontSize: SIZES.medium
   }
 });
