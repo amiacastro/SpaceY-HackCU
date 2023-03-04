@@ -18,7 +18,8 @@ const theme = {
 
 const App = () => {
   const [loaded] = useFonts({
-
+    InterBold: require("./assets/fonts/Inter-Bold.ttf"),
+    InterSemiBold: require("./assets/fonts/Inter-Bold.ttf"),
   })
 
   return (
