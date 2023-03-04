@@ -2,7 +2,7 @@ import { StyleSheet, Text, View } from 'react-native';
 
 const FriendScreen = () => {
     return (
-        <View style={styles.container}>
+        <View>
         <Text>FriendScreen</Text>
         </View>
     );
