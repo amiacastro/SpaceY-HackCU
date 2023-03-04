@@ -1,10 +1,10 @@
 import { StyleSheet, Text, View } from 'react-native';
+import { Text } from 'react-native';
 
 const FriendScreen = () => {
     return (
-        <View>
-        <Text>FriendScreen</Text>
-        </View>
+        <Text>Friends</Text>
+
     );
 }
 
