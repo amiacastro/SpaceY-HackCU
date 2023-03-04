@@ -4,7 +4,7 @@ import { COLORS } from '../constants';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { NavigationContainer } from '@react-navigation/native';
 
-import { HomeHeader, FocusedStatusBar } from '../componenets';
+import { HomeHeader, FocusedStatusBar } from '../components';
 
 const Home = () => {
   return (
