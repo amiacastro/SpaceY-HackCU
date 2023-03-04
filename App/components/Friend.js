@@ -1,14 +1,15 @@
-import { View, Text, Pressable, FlatList } from 'react-native'
-import { FriendData } from '../constants'
+import { View, Text, Pressable, Image } from 'react-native'
 import React from 'react'
 
 const Friend = (props) => {
+  const friend = props.friend
   return (
     <Pressable>
-      <FlatList 
-        data={FriendData}
-        renderItem={({item}) => <Friend name={item.name} />}
-      />
+      <Image source={friend.image} />
+      <View>
+        <Text>{friend.name}</Text>
+        <Text>{friend.user}</Text>
+      </View>
     </Pressable>
   )
 }

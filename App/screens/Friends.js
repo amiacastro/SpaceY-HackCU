@@ -1,12 +1,13 @@
 import { FlatList, SafeAreaView, Text, View } from 'react-native';
-import Friend from '../components/Friend';
+import Friend from '../components';
 
 const Friends = () => {
     return (
         <SafeAreaView>
             <FlatList 
                 data={FriendData}
-                renderItem={({item}) => <Friend name={item.name}/>}
+                renderItem={({item}) => <Friend friend={item}/>}
+                keyExtractor={item => item.id}
             />
         </SafeAreaView>
     );
