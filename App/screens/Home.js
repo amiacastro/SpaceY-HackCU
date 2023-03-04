@@ -3,7 +3,7 @@ import { View, SafeAreaView, FlatList, Text } from 'react-native';
 
 const Home = () => {
   return (
-    <div>Home</div>
+    'Home'
   )
 }
 
