@@ -4,6 +4,7 @@ import {NavigationContainer, DefailtTheme} from '@react-navigation/native'
 export default function App() {
   return (
     <View style={styles.container}>
+      <Text>Ur Mom</Text>
       <NavigationContainer>
         
       </NavigationContainer>
