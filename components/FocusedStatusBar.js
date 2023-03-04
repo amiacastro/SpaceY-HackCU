@@ -4,10 +4,8 @@ import React from 'react'
 
 const FocusedStatusBar = () => {
 
-    const isFocused = useIsFocused();
-    return (
-        isFocused ? <StatusBar animated={true}
-    )
+    const isFocused = useIsFocused(props);
+    return isFocused ? <StatusBar animated={true} {...props} /> : null;
 }
 
 export default FocusedStatusBar
