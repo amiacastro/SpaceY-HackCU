@@ -1,8 +1,14 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { FlatList, SafeAreaView, Text, View } from 'react-native';
+import Friend from '../components/Friend';
 
 const Friends = () => {
     return (
-        <Text>Friends</Text>
+        <SafeAreaView>
+            <FlatList 
+                data={FriendData}
+                renderItem={({item}) => <Friend name={item.name}/>}
+            />
+        </SafeAreaView>
     );
 }
 
