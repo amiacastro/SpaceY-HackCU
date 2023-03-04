@@ -19,7 +19,7 @@ const App = () => {
           <Stack.Navigator screenOptions={{ headerShown: false}}
           initialRouteName = "Home">
             <Stack.Screen name ="Home" component={Home}/>
-            <Stack.Screen name ="Friends" component={Friends}/>
+            <Stack.Screen name ="FriendScreen" component={FriendScreen.js}/>
           </Stack.Navigator>
       </NavigationContainer>
   );
