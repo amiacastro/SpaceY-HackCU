@@ -6,7 +6,8 @@ const Friends = () => {
         <SafeAreaView>
             <FlatList 
                 data={FriendData}
-                renderItem={({item}) => <Friend name={item.name}/>}
+                renderItem={({item}) => <Friend friend={item}/>}
+                keyExtractor={item => item.id}
             />
                 <View style={{ flex: 1}}>
                     <View style={{zIndex: 0}}>
