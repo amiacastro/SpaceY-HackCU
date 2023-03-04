@@ -12,8 +12,8 @@ const Friends = () => {
                     <View style={{zIndex: 0}}>
                     <Text>TEst</Text>
                     <Button
-                        title="Go to Friends"
-                        onPress={() => navigation.navigate('Friends')}
+                        title="Go to Home"
+                        onPress={() => navigation.navigate('Home')}
                     />
                     </View>
                 </View>
