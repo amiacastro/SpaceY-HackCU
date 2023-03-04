@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View } from 'react-native';
 
-const FriendScreen = () => {
+const Friends = () => {
     return (
         <View>
         <Text>FriendScreen</Text>
@@ -8,4 +8,4 @@ const FriendScreen = () => {
     );
 }
 
-export default FriendScreen;
+export default Friends;
