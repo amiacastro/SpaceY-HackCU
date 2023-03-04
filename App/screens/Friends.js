@@ -1,11 +1,11 @@
 import { StyleSheet, Text, View } from 'react-native';
 import { Text } from 'react-native';
 
-const FriendScreen = () => {
+const Friends = () => {
     return (
         <Text>Friends</Text>
 
     );
 }
 
-export default FriendScreen;
+export default Friends;
