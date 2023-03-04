@@ -8,6 +8,15 @@ const Friends = () => {
                 data={FriendData}
                 renderItem={({item}) => <Friend name={item.name}/>}
             />
+                <View style={{ flex: 1}}>
+                    <View style={{zIndex: 0}}>
+                    <Text>TEst</Text>
+                    <Button
+                        title="Go to Friends"
+                        onPress={() => navigation.navigate('Friends')}
+                    />
+                    </View>
+                </View>
         </SafeAreaView>
     );
 }
