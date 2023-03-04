@@ -1,4 +1,4 @@
-import HomeHeader from './components/HomeHeader'
+import HomeHeader from './HomeHeader'
 import FocusedStatusBar from './FocusedStatusBar'
 
 export {

@@ -7,7 +7,7 @@ import { HomeHeader, FocusedStatusBar } from '../componenets';
 const Home = () => {
   return (
     <SafeAreaView style={{ flex:1 }}>
-
+      <FocusedStatusBar background={COLORS.primary} />
  
     </SafeAreaView>
   )
