@@ -1,7 +1,7 @@
 import { FlatList, SafeAreaView, Text, View } from 'react-native';
 import Friend from '../components';
 
-const Friends = () => {
+const Friends = ({navigation}) => {
     return (
         <SafeAreaView>
             <FlatList 

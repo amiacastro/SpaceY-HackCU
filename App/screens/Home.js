@@ -6,7 +6,7 @@ import { NavigationContainer } from '@react-navigation/native';
 
 import { HomeHeader, FocusedStatusBar } from '../components';
 
-const Home = () => {
+const Home = ({navigation}) => {
   return (
     <SafeAreaView style={{ flex:1 }}>
       <FocusedStatusBar background={COLORS.primary} />
