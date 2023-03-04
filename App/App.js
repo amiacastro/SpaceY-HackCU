@@ -13,7 +13,7 @@ const theme = {
   }
 }
 
-const App () => {
+const App = () => {
   return (
       <NavigationContainer theme={theme}>
           <Stack.Navigator screenOptions={{ headerShown: false}}
