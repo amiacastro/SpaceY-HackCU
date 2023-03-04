@@ -1,7 +1,7 @@
 import React from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, SafeAreaView, TouchableHighlight, TextInput } from 'react-native';
-
+import { COLORS, SIZES} from '../constants';
 export default function Login() {
   const loginPress = () => console.log("Log in pressed");
   const [username, onChangeUsername] = React.useState('');
@@ -16,7 +16,7 @@ export default function Login() {
         onChangeText={(val) => onChangeUsername(val)}
         value={username}
       />
-      <Text>Password: </Text>
+      <Text style={styles.normalText}>Password: </Text>
       <TextInput
         style={styles.input}
         onChangeText={(val) => onChangePass(val)}
@@ -29,12 +29,6 @@ export default function Login() {
           <Text style={styles.loginText}>Log In</Text>
       </TouchableHighlight>
       <StatusBar style="auto" />
-      <Text>
-        username: {username}
-      </Text>
-      <Text>
-        password: {password}
-      </Text>
     </SafeAreaView>
   );
 }
@@ -42,45 +36,54 @@ export default function Login() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: COLORS.primary,
     alignItems: 'center',
     justifyContent: 'center',
   },
   title:{
-    fontSize: 30,
-    padding: 20,
-    color: 'teal'
+    fontSize: SIZES.title,
+    paddingBottom: "15%",
+    color: COLORS.secondary,
+    textAlign: 'center',
   },
   subtitle:{
-    fontSize: 20,
-    paddingBottom: 15,
-    color: 'gray'
+    fontSize: SIZES.extraLarge,
+    paddingBottom: "8%",
+    paddingLeft: "20%",
+    paddingRight: "20%",
+    color: COLORS.gray,
+    textAlign: 'center',
   },
   normalText:{
-    fontSize: 14,
-    justifyContent: 'left',
+    fontSize: SIZES.medium,
+    color: COLORS.white
   },
   input: {
-    height: 40,
-    margin: 12,
+    height: "6%",
+    width: "60%",
+    margin: "5%",
     borderWidth: 1,
-    padding: 10,
+    padding: "5%",
+    color: COLORS.white,
+    borderColor: COLORS.white
   },
   loginButton:{
     marginRight:40,
     marginLeft:40,
-    marginTop:10,
-    paddingTop:10,
-    paddingBottom:10,
-    backgroundColor:'#808080',
+    marginTop:20,
+    paddingTop:"3%",
+    paddingBottom:"3%",
+    width: "40%",
+    backgroundColor: COLORS.gray,
     borderRadius:8,
     borderWidth: 1,
-    borderColor: '#fff'
+    borderColor: COLORS.white
   },
   loginText:{
-    color:'#fff',
+    color: COLORS.white,
     textAlign:'center',
     paddingLeft : 10,
-    paddingRight : 10
+    paddingRight : 10,
+    fontSize: SIZES.medium
   }
 });
