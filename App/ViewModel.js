@@ -7,6 +7,19 @@ class ViewModel {
         this.searchedFriends;
     }
 
+    login(username, password, navigation) {
+        const user = Users.find((user) => user.username.toLowerCase() === username.toLowerCase() && user.password === password);
+
+        if (user) {
+            this.user = user;
+            this.friends = user.friends;
+            this.searchedFriends = user.friends;
+            navigation.navigate('AppScreens')
+        } else {
+            alert("Invalid username or password");
+        }
+    }
+
     searchFriends(value) {
         if (!value.length) return this.searchedFriends = this.friends;
 
