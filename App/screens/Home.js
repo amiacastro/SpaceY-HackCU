@@ -1,8 +1,7 @@
 import { useState } from 'react';
 import { Button, View, SafeAreaView, FlatList, Text, StyleSheet } from 'react-native';
 import { COLORS } from '../constants';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { NavigationContainer } from '@react-navigation/native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import { HomeHeader, FocusedStatusBar } from '../components';
 
