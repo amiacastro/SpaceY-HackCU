@@ -1,8 +1,8 @@
 import HomeHeader from './HomeHeader'
 import FocusedStatusBar from './FocusedStatusBar'
 import Friend from './Friend'
-import NavigationBar from './NavigationBar'
+import AppScreens from '../screens/AppScreens'
 
 export {
-    HomeHeader, FocusedStatusBar, Friend, NavigationBar
+    HomeHeader, FocusedStatusBar, Friend
 }

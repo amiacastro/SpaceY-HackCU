@@ -2,13 +2,11 @@ import { StyleSheet, Text, View } from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
 import { useFonts } from 'expo-font';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-import Home from './screens/Home';
-import Friends from './screens/Friends';
-import { NavigationBar } from './components';
+import AppScreens from './screens/AppScreens';
+import Login from './screens/Login';
 
-const Tab = createBottomTabNavigator();
+const Stack = createStackNavigator();
 
 const theme = {
   ... DefaultTheme,
@@ -29,23 +27,23 @@ const App = () => {
 
   return (
     <NavigationContainer theme={theme}>
-          <Tab.Navigator 
+          <Stack.Navigator 
           screenOptions={{ headerShown: false}}
-          initialRouteName = "Home"
+          initialRouteName = "AppScreens"
           >
-            <Tab.Screen name ="Home" component={Home}/>
-            <Tab.Screen name ="Friends" component={Friends}/>
-          </Tab.Navigator>
+            <Stack.Screen name ="Login" component={Login}/>
+            <Stack.Screen name ="AppScreens" component={AppScreens}/>
+          </Stack.Navigator>
       </NavigationContainer>
   );
 }
 
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     backgroundColor: '#fff',
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
 
-//   },
-// });
+  },
+});
 
 export default App;
