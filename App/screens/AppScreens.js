@@ -2,7 +2,8 @@ import * as React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import Home from './Home';
-import Friends from './Friends'
+import Friends from './Friends';
+import Profile from './Profile';
 
 const Tab = createBottomTabNavigator();
 
@@ -14,6 +15,7 @@ const AppScreens = () => {
     >
       <Tab.Screen name="Home" component={Home} />
       <Tab.Screen name="Friends" component={Friends} />
+      <Tab.Screen name="Profile" component={Profile} />
     </Tab.Navigator>
   );
 }
