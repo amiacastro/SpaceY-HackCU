@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { View, SafeAreaView, FlatList, Text, StyleSheet, ImageBackground } from 'react-native';
-import { COLORS } from '../constants';
+import { COLORS, assets } from '../constants';
 import { HomeHeader, FocusedStatusBar, EventCard } from '../components';
 
 
