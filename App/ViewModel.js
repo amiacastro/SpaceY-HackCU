@@ -6,6 +6,6 @@ class ViewModel {
     }
 }
 
-let viewModel = new ViewModel();
+let ViewModelInstance = new ViewModel();
 
-export default viewModel;
+export default ViewModelInstance;
