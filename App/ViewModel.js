@@ -21,6 +21,14 @@ class ViewModel {
         return this.events;
     }
 
+    getCalendarFriends() {
+        let friends = [];
+        for (let i = 0; i < this.friends.length; i++) {
+            friends.push({key:i, value:(this.friends[i].firstname + " " + this.friends[i].lastname)});
+        }
+        return friends;
+    }
+
     getUpcomingEvents() {
         let events = []
         for (let date = 0; date < this.events.length; date++) {
@@ -56,7 +64,7 @@ class ViewModel {
         navigation.navigate('AppScreens');
     }
 
-    newEvent(friend, hour, min, ampm){
+    newEvent(friends, hour, min, ampm){
         
     }
 
