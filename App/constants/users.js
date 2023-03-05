@@ -4,7 +4,7 @@ const Users = [
     {
         id: 1,
         username: "aphan",
-        password: "123",
+        password: "12345",
         name: "Albert Phan",
         image: assets.person01,
         friends: [
@@ -35,3 +35,5 @@ const Users = [
         ]
     },
 ]
+
+export { Users };
