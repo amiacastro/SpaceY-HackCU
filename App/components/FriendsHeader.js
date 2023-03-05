@@ -3,22 +3,22 @@ import { View, Text, Image, TextInput, StyleSheet } from "react-native";
 
 import { COLORS, FONTS, SIZES, assets } from "../constants";
 
-const HomeHeader = ({name}) => {
+const FriendsHeader = ({onSearch}) => {
   return (
     <View style={styles.container}>
       <View style={styles.spacing}>
       </View>
       <View style={{ marginVertical: SIZES.font }}>
         <Text style={styles.greeting} >
-          Hello {name} 👋
+          Hello Victoria 👋
         </Text>
         <Text style={styles.header}>
-        This is the Home Page
+          This is the Home Page
         </Text>
       </View>
 
       <View style={{ marginTop: SIZES.font }}>
-        {/* <View style={styles.searchBar}>
+        <View style={styles.searchBar}>
           <Image
             source={assets.search}
             resizeMode="contain"
@@ -29,7 +29,7 @@ const HomeHeader = ({name}) => {
             style={{ flex: 1 }}
             onChangeText={onSearch}
           />
-        </View> */}
+        </View>
       </View>
     </View>
   );
@@ -37,7 +37,7 @@ const HomeHeader = ({name}) => {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: COLORS.primary,
+    backgroundColor: COLORS.pastel_darker_blue,
     padding: SIZES.font,
   },
   spacing: {
@@ -59,7 +59,7 @@ const styles = StyleSheet.create({
   searchBar: {
     width: "100%",
     borderRadius: SIZES.font,
-    backgroundColor: COLORS.background,
+    backgroundColor: COLORS.pastel_pink,
     flexDirection: "row",
     alignItems: "center",
     paddingHorizontal: SIZES.font,
@@ -68,4 +68,4 @@ const styles = StyleSheet.create({
 
 });
 
-export default HomeHeader;
+export default FriendsHeader;

@@ -3,6 +3,8 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, SafeAreaView, TouchableHighlight, TextInput } from 'react-native';
 import { COLORS, SIZES, FONTS} from '../constants';
 
+import ViewModelInstance from '../ViewModel';
+
 export default function Login({navigation}) {
   const [username, onChangeUsername] = React.useState('');
   const [password, onChangePass] = React.useState('');
@@ -24,7 +26,7 @@ export default function Login({navigation}) {
       />
       <TouchableHighlight
           style={styles.loginButton}
-          onPress={() => navigation.navigate('AppScreens')}
+          onPress={() => ViewModelInstance.login(username, password, navigation)}
           underlayColor="#DDDDDD">
           <Text style={styles.loginText}>Log In</Text>
       </TouchableHighlight>
