@@ -139,13 +139,14 @@ const styles = StyleSheet.create({
   createEventContainer: {
     alignItems: 'center',
     justifyContent: 'center',
+    marginTop: 35,
   },
   createEventText: {
     color: COLORS.white,
     textAlign: 'center',
     paddingLeft: 10,
     paddingRight: 10,
-    fontSize: SIZES.medium
+    fontSize: SIZES.medium,
   },
   createEventButton: {
     marginRight: 40,
