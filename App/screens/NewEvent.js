@@ -19,7 +19,7 @@ const NewEvent = ({navigation}) => {
   ]
   const mins = [
     {key:'1', value:'00'},
-    {key:'2', value:'15', disabled:true},
+    {key:'2', value:'15'},
     {key:'3', value:'30'},
     {key:'4', value:'45'},
   ]
@@ -27,12 +27,7 @@ const NewEvent = ({navigation}) => {
     {key:'1', value:'AM'},
     {key:'2', value:'PM'}
   ]
-  const friends = [
-    {key:'1', value:'Amia'},
-    {key:'2', value:'Fernando'},
-    {key:'3', value:'Albert'},
-    {key:'4', value:'Cailyn'},
-  ]
+  const friends = ViewModelInstance.getCalendarFriends();
   const onPress = () => {
     ViewModelInstance.newEvent(friend, hour, min, ampm);
     navigation.navigate("Calendar");
