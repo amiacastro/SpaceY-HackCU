@@ -36,6 +36,9 @@ import gradient from "../assets/images/gradient.png";
 import gradient2 from "../assets/images/gradient2.png";
 import gradient3 from "../assets/images/gradient3.png";
 import gradient4 from "../assets/images/gradient4.png";
+import gradient5 from "../assets/images/gradient5.png";
+import gradient6 from "../assets/images/gradient6.png";
+import gradient7 from "../assets/images/gradient7.png";
 
 export default {
   badge,
@@ -76,4 +79,7 @@ export default {
   gradient2,
   gradient3,
   gradient4,
+  gradient5,
+  gradient6,
+  gradient7,
 };

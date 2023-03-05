@@ -2,7 +2,6 @@ import React from "react";
 import { useState } from 'react';
 import { View, Text, StyleSheet, Pressable } from "react-native";
 import { Modal } from "react-native-paper";
-import { FocusedStatusBar } from "../components";
 
 import { COLORS, FONTS, SIZES, assets } from "../constants";
 import ViewModelInstance from "../ViewModel";
@@ -11,7 +10,6 @@ const ProfileHeader = ({ username }) => {
     const [modalVisible, setModalVisible] = useState(false);
     return (
         <View style={styles.container}>
-            <FocusedStatusBar />
             <Text style={styles.username} >
                 {username}
             </Text>
