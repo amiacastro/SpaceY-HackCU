@@ -37,7 +37,7 @@ const HomeHeader = ({name}) => {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: COLORS.pastel_darker_blue,
+    backgroundColor: COLORS.primary,
     padding: SIZES.font,
   },
   spacing: {
@@ -59,7 +59,7 @@ const styles = StyleSheet.create({
   searchBar: {
     width: "100%",
     borderRadius: SIZES.font,
-    backgroundColor: COLORS.pastel_pink,
+    backgroundColor: COLORS.background,
     flexDirection: "row",
     alignItems: "center",
     paddingHorizontal: SIZES.font,
