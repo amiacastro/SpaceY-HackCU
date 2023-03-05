@@ -10,6 +10,7 @@ export const COLORS = {
   pastel_medium_blue: "#B9F3FC",
   pastel_darker_blue: "#93C6E7",
   pastel_pink: "#FEDEFF",
+  pastel_darker_pink: "#F15AFA",
 
   primary: '#E8C4C4',
   background: '#F2E5E5',

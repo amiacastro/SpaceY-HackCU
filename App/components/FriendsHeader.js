@@ -58,11 +58,13 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: COLORS.pastel_darker_blue,
     padding: SIZES.font,
+    height: 120,
   },
   spacing: {
     flexDirection: "row",
     justifyContent: "space-evenly",
     alignItems: "center",
+    marginTop: 15,
   },
   selected: {
     backgroundColor: COLORS.pastel_pink,

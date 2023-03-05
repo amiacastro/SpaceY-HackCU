@@ -1,20 +1,24 @@
 import { useState } from 'react';
-import { View, SafeAreaView, Text, StyleSheet, Image, Alert, Modal, Pressable, FlatList } from 'react-native';
+import { View, SafeAreaView, Text, StyleSheet, Image, Alert, Modal, Pressable, FlatList, ImageBackground } from 'react-native';
 import { ProfileHeader, ModalCard } from '../components';
-import { COLORS, FONTS, SIZES } from '../constants';
+import { COLORS, FONTS, SIZES, assets } from '../constants';
 import ViewModelInstance from '../ViewModel';
 
 const Profile = ({ navigation }) => {
     const [modalVisible, setModalVisible] = useState(false);
 
     return (
-        <SafeAreaView>
+        <SafeAreaView style={styles.wrapper}>
             {/* Header */}
             <ProfileHeader username={ViewModelInstance.user.username} />
+            <ImageBackground source={assets.gradient4} resizeMode="cover" style={styles.image}>
+
             {/* Profile picture */}
             <View style={styles.imageStyling}>
                 <Image source={ViewModelInstance.user.image} style={{ width: 300, height: 300, borderRadius: 25, marginTop: 5 }} />
+                <Text style={{ color: COLORS.black, ...SIZES.title, fontWeight: "bold", marginTop: 5 }}>{ViewModelInstance.user.firstname} {ViewModelInstance.user.lastname}</Text>
             </View>
+
             <View style={styles.container}>
                 <Modal
                     animationType="slide"
@@ -50,21 +54,22 @@ const Profile = ({ navigation }) => {
                 <Pressable
                     // onPress={() => ViewModelInstance.setModal(true)}>       
                     onPress={() => setModalVisible(true)}>
-                    <Text>Options</Text>
+                    <Text style={styles.optionStyle}>Options</Text>
                 </Pressable>
             </View>
-
+            </ImageBackground>
 
             {/* Events that have been made */}
-
-        </SafeAreaView>
+        
+            </SafeAreaView >
+      
     )
 }
 
 const styles = StyleSheet.create({
     imageStyling: {
         width: '100%',
-        height: 400,
+        height: 350,
         alignItems: 'center',
         padding: 5,
         justifyContent: 'center',
@@ -95,8 +100,23 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         fontSize: SIZES.large,
         fontWeight: 'bold'
-    }
+    },
+    optionStyle: {
+        fontSize: 15,
+        fontWeight: 'bold',
 
+    },
+    image: {
+        flex: 1,
+        justifyContent: 'center',
+        width: '100%',
+        height: '100%',
+    },
+    wrapper: {
+        flex: 1,
+        width: '100%',
+        height: '100%',
+    }
 });
 
 export default Profile;

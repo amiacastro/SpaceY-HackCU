@@ -1,12 +1,13 @@
 import { useCallback, useState } from 'react';
-import { FlatList, SafeAreaView, Text, View } from 'react-native';
+import { FlatList, SafeAreaView, Text, View, StyleSheet, ImageBackground } from 'react-native';
 import { Friend, FriendsHeader, Request } from '../components';
 import { Dimensions } from 'react-native';
+import { assets } from '../constants';
 
 import ViewModelInstance from '../ViewModel';
 
-const Friends = ({navigation}) => {
-    const [list, setList] = useState([{id:1,val:<MyFriends />}, {id:2,val:<Requests handleRequest={handleRequest} />}]);
+const Friends = ({ navigation }) => {
+    const [list, setList] = useState([{ id: 1, val: <MyFriends /> }, { id: 2, val: <Requests handleRequest={handleRequest} /> }]);
     const [index, setIndex] = useState(0);
 
     const handleRequest = (val, person) => {
@@ -15,12 +16,12 @@ const Friends = ({navigation}) => {
         } else {
             ViewModelInstance.declineRequest(person);
         }
-        setList([{id:1,val:<MyFriends />}, {id:2,val:<Requests handleRequest={handleRequest} />}]);
+        setList([{ id: 1, val: <MyFriends /> }, { id: 2, val: <Requests handleRequest={handleRequest} /> }]);
     };
 
     const handleSearch = (value) => {
         ViewModelInstance.searchFriends(value);
-        setList([{id:1,val:<MyFriends />}, {id:2,val:<Requests handleRequest={handleRequest} />}]);
+        setList([{ id: 1, val: <MyFriends /> }, { id: 2, val: <Requests handleRequest={handleRequest} /> }]);
         console.log(ViewModelInstance.searchFriendsResults);
     };
 
@@ -30,35 +31,37 @@ const Friends = ({navigation}) => {
 
 
     return (
-        <SafeAreaView style={{ flex:1 }}>
-            <FriendsHeader index={index} onSearch={handleSearch}/>
-            <FlatList
-                ref={(ref) => {
-                    ViewModelInstance.FriendListRef = ref;
-                  }}
-                onViewableItemsChanged={onViewableItemsChanged }
-                style={{width:Dimensions.get('window').width}}
-                horizontal
-                pagingEnabled
-                data={list}
-                keyExtractor={item => item.id}
-                showsHorizontalScrollIndicator={false}
-                renderItem={({item}) => {
-                    return (
-                    item.val
-                    );
-                }}
-            />
-        </SafeAreaView>
+        <ImageBackground source={assets.gradient3} resizeMode="cover" style={styles.image}>
+            <SafeAreaView style={{ flex: 1 }}>
+                <FriendsHeader index={index} onSearch={handleSearch} />
+                <FlatList
+                    ref={(ref) => {
+                        ViewModelInstance.FriendListRef = ref;
+                    }}
+                    onViewableItemsChanged={onViewableItemsChanged}
+                    style={{ width: Dimensions.get('window').width }}
+                    horizontal
+                    pagingEnabled
+                    data={list}
+                    keyExtractor={item => item.id}
+                    showsHorizontalScrollIndicator={false}
+                    renderItem={({ item }) => {
+                        return (
+                            item.val
+                        );
+                    }}
+                />
+            </SafeAreaView>
+        </ImageBackground>
     );
 }
 
-const Requests = ({handleRequest}) => {
+const Requests = ({ handleRequest }) => {
     return (
-        <View style={{ flex:1 , width:Dimensions.get('window').width}}>
+        <View style={{ flex: 1, width: Dimensions.get('window').width }}>
             <FlatList
                 data={ViewModelInstance.friendRequests}
-                renderItem={({item}) => <Request person={item} handleRequest={handleRequest}/>}
+                renderItem={({ item }) => <Request person={item} handleRequest={handleRequest} />}
                 keyExtractor={item => item.id}
                 showsVerticalScrollIndicator={false}
             />
@@ -68,10 +71,10 @@ const Requests = ({handleRequest}) => {
 
 const MyFriends = () => {
     return (
-        <View style={{ flex:1, width:Dimensions.get('window').width }}>
-            <FlatList 
+        <View style={{ flex: 1, width: Dimensions.get('window').width }}>
+            <FlatList
                 data={ViewModelInstance.searchFriendsResults}
-                renderItem={({item}) => <Friend friend={item} />}
+                renderItem={({ item }) => <Friend friend={item} />}
                 keyExtractor={item => item.id}
                 showsVerticalScrollIndicator={false}
             />
@@ -80,5 +83,12 @@ const MyFriends = () => {
 }
 
 
-
+const styles = StyleSheet.create({
+    image: {
+        flex: 1,
+        justifyContent: 'center',
+        width: '100%',
+        height: '100%',
+    }
+});
 export default Friends;

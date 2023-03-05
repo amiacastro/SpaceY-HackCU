@@ -17,6 +17,7 @@ import person01 from "../assets/images/person01.png";
 import person02 from "../assets/images/person02.png";
 import person03 from "../assets/images/person03.png";
 import person04 from "../assets/images/person04.png";
+import aphan from "../assets/images/aphan.png";
 
 import activity from "../assets/images/activity.png";
 import archive from "../assets/images/archive.png";
@@ -28,6 +29,12 @@ import inbox from "../assets/images/inbox.png";
 import saved from "../assets/images/saved.png";
 import settings from "../assets/images/settings.png";
 import acquainted from "../assets/images/acquainted.png";
+import favicon from "../assets/images/favicon.png";
+
+import gradient from "../assets/images/gradient.png";
+import gradient2 from "../assets/images/gradient2.png";
+import gradient3 from "../assets/images/gradient3.png";
+import gradient4 from "../assets/images/gradient4.png";
 
 export default {
   badge,
@@ -49,6 +56,7 @@ export default {
   person02,
   person03,
   person04,
+  aphan,
 
   activity,
   archive,
@@ -60,4 +68,10 @@ export default {
   saved,
   settings,
   acquainted,
+  favicon,
+
+  gradient,
+  gradient2,
+  gradient3,
+  gradient4,
 };

@@ -15,30 +15,6 @@ const ProfileHeader = ({ username }) => {
             <Text style={styles.username} >
                 {username}
             </Text>
-            {/* <Pressable
-                onPress={() => ViewModelInstance.setModal(true)}>
-                <Text>Openupbitch</Text>
-            </Pressable> */}
-            {/* <Modal
-                animationType="type"
-                transparent={true}
-                visible={modalVisible}
-                onRequestClose={() => {
-                    Alert.alert('Modal has been closed.');
-                    setModalVisible(!modalVisible);
-            }}>
-                <View>
-                    <Text>Settings</Text>
-                    <Pressable
-                        onPress={() => setModalVisible(!modalVisible)}>
-                        <Text>Close</Text>
-                    </Pressable>
-                </View>
-            </Modal>
-            <Pressable
-                onPress={() => setModalVisible(true)}>
-                <Text>Open</Text>
-            </Pressable> */}
         </View>
     );
 }
@@ -53,7 +29,9 @@ const styles = StyleSheet.create({
         height: 60,
     },
     username: {
-        marginTop: 10
+        marginTop: 10,
+        fontSize: 18,
+        color: COLORS.black,
     }
 });
 

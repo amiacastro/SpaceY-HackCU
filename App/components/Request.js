@@ -17,7 +17,7 @@ const Request = ({person, handleRequest}) => {
                     <Text style={{color: COLORS.pastel_darker_blue }}>Accept</Text>
                 </Pressable>
                 <Pressable onPress={() => handleRequest(0,person)}>
-                    <Text style={{color: COLORS.pastel_pink}}>Decline</Text>
+                    <Text style={{color: COLORS.pastel_darker_pink}}>Decline</Text>
                 </Pressable>
             </View>
         </View>

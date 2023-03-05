@@ -12,9 +12,7 @@ const HomeHeader = ({name}) => {
         <Text style={styles.greeting} >
           Hello {name} 👋
         </Text>
-        <Text style={styles.header}>
-        This is the Home Page
-        </Text>
+        <Text style={styles.header}>Upcoming Events</Text>
       </View>
     </View>
   );
@@ -38,7 +36,7 @@ const styles = StyleSheet.create({
   header: {
     fontFamily: FONTS.bold,
     fontSize: SIZES.extraLarge,
-    color: COLORS.paste,
+    color: COLORS.white,
     marginTop: SIZES.base / 2,
   },
   searchBar: {

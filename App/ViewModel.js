@@ -1,4 +1,4 @@
-import { Users, modalOptions } from './constants';
+import { Users, modalOptions , Events} from './constants';
 
 class ViewModel {
     constructor() {
@@ -7,6 +7,7 @@ class ViewModel {
 
         this.friends;
         this.otherUsers;
+        this.events;
 
         this.searchFriendsResults;
         this.modalVisible = false;
@@ -14,6 +15,21 @@ class ViewModel {
         this.friendRequests;
         
         this.FriendListRef;
+    }
+
+    getEvents() {
+        return this.events;
+    }
+
+    getUpcomingEvents() {
+        let events = []
+        for (let date = 0; date < this.events.length; date++) {
+            if (date < 23) {
+                events.push(...this.events[date]);
+            }
+        }
+        console.log(events)
+        return events;
     }
 
     login(username, password, navigation) {
@@ -28,12 +44,13 @@ class ViewModel {
         //     alert("Invalid username or password");
         // }
         this.user = Users[0];
-        this.otherUsers = Users[0].others;
-        this.friends = Users[0].friends;
-        this.searchFriendsResults = Users[0].friends;
-        this.firstname = Users[0].firstname;
-        this.friendRequests = Users[0].requests;
+        this.otherUsers = this.user.others;
+        this.friends = this.user.friends;
+        this.searchFriendsResults = this.user.friends;
+        this.firstname = this.user.firstname;
+        this.friendRequests = this.user.requests;
         this.modalVisible = false;
+        this.events = Events;
         this.modalOptions = modalOptions;
         console.log("User: " + this.user.username + " logged in");
         navigation.navigate('AppScreens');

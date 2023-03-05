@@ -7,14 +7,21 @@ const Users = [
         password: "12345",
         firstname: "Albert",
         lastname: "Phan",
-        image: assets.person01,
+        image: assets.aphan,
         requests: [
             {
                 id: 9,
                 username: "bob",
                 firstname: "Bob",
                 lastname: "Bobson",
-                image: assets.person01,
+                image: assets.nft06,
+            },
+            {
+                id: 10,
+                username: "jane",
+                firstname: "Jane",
+                lastname: "Doe",
+                image: assets.nft07,
             },
         ],
         friends: [
@@ -37,7 +44,7 @@ const Users = [
                 username: "rosiewong",
                 firstname: "Rosie",
                 lastname: "Wong",
-                image: assets.person03,
+                image: assets.nft06,
             },
             {
                 id: 8,
@@ -63,7 +70,7 @@ const Users = [
                 password: "12345",
                 firstname: "Fernando",
                 lastname: "Sandoval Garza",
-                image: assets.person02,
+                image: assets.nft04,
                 friends: []
             },
             {
@@ -72,7 +79,7 @@ const Users = [
                 password: "12345",
                 firstname: "Cailyn",
                 lastname: "Smith",
-                image: assets.person04,
+                image: assets.nft07,
                 friends: []
             },
         ]
