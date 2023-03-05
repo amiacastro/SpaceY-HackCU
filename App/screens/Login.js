@@ -37,14 +37,14 @@ export default function Login() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: COLORS.primary,
+    backgroundColor: COLORS.pastel_darker_blue,
     alignItems: 'center',
     justifyContent: 'center',
   },
   title:{
     fontSize: SIZES.title,
     paddingBottom: "10%",
-    color: COLORS.secondary,
+    color: COLORS.pastel_medium_blue,
     textAlign: 'center',
   },
   subtitle:{
@@ -89,7 +89,7 @@ const styles = StyleSheet.create({
   },
   createAccount:{
     paddingTop: "10%",
-    color: COLORS.white,
+    color: COLORS.pastel_light_blue,
     textDecorationLine: 'underline',
     fontSize: SIZES.medium
   }
