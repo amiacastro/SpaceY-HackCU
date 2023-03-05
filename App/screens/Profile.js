@@ -34,7 +34,7 @@
 // export default Profile;
 
 
-import {  View, SafeAreaView, Text, StyleSheet } from 'react-native';
+import {  View, SafeAreaView, Text, StyleSheet, Image } from 'react-native';
 import ViewModelInstance from '../ViewModel';
 
 const Profile = ({ navigation }) => {
@@ -52,7 +52,9 @@ const Profile = ({ navigation }) => {
         <SafeAreaView>
             {/* Profile picture */}
             <View style={styles.imageStyling}>
-                <Image source={ViewModelInstance.user.image} style={{width: 100, height:100}}/>
+                {/* <Image source={assets.images.person01} style={{width: 100, height:100}}/> */}
+                <Image source={ViewModelInstance.user.image} style={{width: 50, height: 50, borderRadius: 25}} />
+
             </View>
             {/* Events that have been made */}
         </SafeAreaView>
@@ -63,6 +65,8 @@ const styles = StyleSheet.create({
     imageStyling: {
         width: '100%',
         height: 300,
+        alignItems: 'center',
+        padding: 10
     }
 });
 
