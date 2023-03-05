@@ -3,6 +3,7 @@ import { Users } from './constants';
 class ViewModel {
     constructor() {
         this.user;
+        this.firstname;
         this.friends;
         this.searchedFriends;
     }
@@ -19,6 +20,9 @@ class ViewModel {
         //     alert("Invalid username or password");
         // }
         this.user = Users[0];
+        this.friends = Users[0].friends;
+        this.searchedFriends = Users[0].friends;
+        this.firstname = Users[0].firstname;
         navigation.navigate('AppScreens');
     }
 
