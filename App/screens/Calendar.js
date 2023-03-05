@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {SafeAreaView, TouchableOpacity, Text, StyleSheet} from 'react-native';
+import {SafeAreaView, TouchableOpacity, Text, StyleSheet, TouchableHighlight} from 'react-native';
 import {Agenda} from 'react-native-calendars';
 import {Card, Avatar} from 'react-native-paper';
 import { COLORS, SIZES, FONTS} from '../constants';
@@ -11,15 +11,13 @@ const timeToString = (time) => {
 
 const Calendar = () => {
   const [items, setItems] = useState({});
+
+  //TODO: read events and labels from a file instead
   const events = []
   for (let i = 0; i < 5; i++) {
-    //TODO: read from file instead
     events[i] = "Event number " + i
   }
-  const labels = ["J"]
-  // for (let i=0; i<5; i++){
-  //   labels[i] = 'A'+1
-  // }
+  const labels = ["A", "B", "C", "D", "E"]
 
   const loadItems = (day) => {
     setTimeout(() => {
@@ -32,6 +30,7 @@ const Calendar = () => {
           for (let j = 0; j < numItems; j++) {
             items[strTime].push({
               name: events[j],
+              label: labels[j],
               height: Math.max(50, Math.floor(Math.random() * 150)),
             });
           }
@@ -57,7 +56,7 @@ const Calendar = () => {
                 alignItems: 'center',
               }}>
               <Text>{item.name}</Text>
-              <Avatar.Text label="J"/>
+              <Avatar.Text label={item.label}/>
             </SafeAreaView>
           </Card.Content>
         </Card>
@@ -74,7 +73,15 @@ const Calendar = () => {
   };
 
   return (
-    <SafeAreaView style={{flex: 1}}>
+    <SafeAreaView style={styles.container}>
+        <SafeAreaView style={styles.createEventContainer}>
+            <TouchableHighlight
+                style={styles.createEventButton}
+                onPress={() => console.log("creating event")}
+                underlayColor="#DDDDDD">
+                <Text style={styles.createEventText}>Create Event</Text>
+            </TouchableHighlight>
+      </SafeAreaView>
       <Agenda
         items={items}
         loadItemsForMonth={loadItems}
@@ -92,6 +99,9 @@ const Calendar = () => {
   );
 };
 const styles = StyleSheet.create({
+  container:{
+    flex: 1,
+  },
   emptyDateContainer: {
     alignItems: 'center',
     justifyContent: 'center',
@@ -100,6 +110,29 @@ const styles = StyleSheet.create({
     fontSize: SIZES.medium,
     color: COLORS.gray,
     textAlign:'center',
+  },
+  createEventContainer:{
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  createEventText:{
+    color: COLORS.white,
+    textAlign:'center',
+    paddingLeft : 10,
+    paddingRight : 10,
+    fontSize: SIZES.medium
+  },
+  createEventButton:{
+    marginRight:40,
+    marginLeft:40,
+    marginBottom:7,
+    paddingTop:"3%",
+    paddingBottom:"3%",
+    width: "40%",
+    backgroundColor: COLORS.gray,
+    borderRadius:8,
+    borderWidth: 1,
+    borderColor: COLORS.white
   },
 });
 export default Calendar;
