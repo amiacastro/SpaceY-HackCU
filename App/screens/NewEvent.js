@@ -31,7 +31,7 @@ const NewEvent = ({navigation}) => {
   ]
   const friends = ViewModelInstance.getCalendarFriends();
   const onPress = () => {
-    ViewModelInstance.newEvent(friend, hour, min, ampm);
+    ViewModelInstance.newEvent(friend, hour, min, ampm, title, description);
     navigation.navigate("Calendar");
   };
   return (
