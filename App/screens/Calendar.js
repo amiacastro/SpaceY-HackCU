@@ -113,7 +113,7 @@ const Calendar = ({ navigation }) => {
             }}
           items={items}
           loadItemsForMonth={loadItems}
-          selected={'2023-03-04'}
+          selected={'2023-03-05'}
           renderItem={renderItem}
           showOnlySelectedDayItems={true}
           showClosingKnob={true}
