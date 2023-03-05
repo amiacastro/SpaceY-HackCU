@@ -168,7 +168,7 @@ const styles = StyleSheet.create({
     backgroundColor: COLORS.pastel_darker_blue,
     borderRadius:8,
     borderWidth: 1,
-    borderColor: COLORS.white
+    borderColor: COLORS.gray
   },
   buttonCancel:{
     marginRight:20,
@@ -180,7 +180,7 @@ const styles = StyleSheet.create({
     backgroundColor: COLORS.notification,
     borderRadius:8,
     borderWidth: 1,
-    borderColor: COLORS.white
+    borderColor: COLORS.gray
   },
   buttonText:{
     color: COLORS.white,
