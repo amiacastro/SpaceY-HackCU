@@ -1,9 +1,10 @@
-import { FriendData } from './constants';
+import { Users } from './constants';
 
 class ViewModel {
     constructor() {
-        this.friends = FriendData;
-        this.searchedFriends = FriendData;
+        this.user;
+        this.friends;
+        this.searchedFriends;
     }
 
     searchFriends(value) {

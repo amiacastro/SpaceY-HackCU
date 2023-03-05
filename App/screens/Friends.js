@@ -1,6 +1,5 @@
-import { useState } from 'react';
 import { Button, FlatList, SafeAreaView, Text, View } from 'react-native';
-import { Friend, HomeHeader, FriendsHeader } from '../components';
+import { Friend, FriendsHeader } from '../components';
 
 import ViewModelInstance from '../ViewModel';
 
