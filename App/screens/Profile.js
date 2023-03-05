@@ -96,10 +96,16 @@ const styles = StyleSheet.create({
     },
     modalButton: {
         // alignContent: 'center',
+        borderWidth: 1,
+        borderColor: COLORS.white,
+        borderRadius: 3,
+        padding: 5,
+        marginRight: 150,
+        marginLeft: 150,
         alignItems: 'center',
         fontSize: SIZES.large,
         fontWeight: 'bold',
-        marginBottom: 400,
+        marginBottom: 390,
     },
     optionStyle: {
         fontSize: 15,
