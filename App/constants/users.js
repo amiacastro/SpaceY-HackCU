@@ -8,32 +8,72 @@ const Users = [
         firstname: "Albert",
         lastname: "Phan",
         image: assets.person01,
+        requests: [
+            {
+                id: 9,
+                username: "bob",
+                firstname: "Bob",
+                lastname: "Bobson",
+                image: assets.person01,
+            },
+        ],
         friends: [
             {
-                id: 1,
-                user: "@jessica",
-                name: "Jessica Tan",
+                id: 5,
+                username: "jessica",
+                firstname: "Jessica",
+                lastname: "Tan",
                 image: assets.person01,
             },
             {
-                id: 2,
-                user: "@jennifersia",
-                name: "Jennifer Sia",
+                id: 6,
+                username: "jennifersia",
+                firstname: "Jennifer",
+                lastname: "Sia",
                 image: assets.person02,
             },
             {
-                id: 3,
-                user: "@rosiewong",
-                name: "Rosie Wong",
+                id: 7,
+                username: "rosiewong",
+                firstname: "Rosie",
+                lastname: "Wong",
                 image: assets.person03,
             },
             {
-                id: 4,
-                user: "@vincentswift",
-                name: "Vincent Swift",
+                id: 8,
+                username: "vincentswift",
+                firstname: "Vincent",
+                lastname: "Swift",
                 image: assets.person04,
             }
         ]
+    },
+    {
+        id: 2,
+        username: "acastro",
+        password: "12345",
+        firstname: "Amia",
+        lastname: "Castro",
+        image: assets.person03,
+        friends: []
+    },
+    {
+        id: 3,
+        username: "fsandovalgarza",
+        password: "12345",
+        firstname: "Fernando",
+        lastname: "Sandoval Garza",
+        image: assets.person02,
+        friends: []
+    },
+    {
+        id: 4,
+        username: "csmith",
+        password: "12345",
+        firstname: "Cailyn",
+        lastname: "Smith",
+        image: assets.person04,
+        friends: []
     },
 ]
 
