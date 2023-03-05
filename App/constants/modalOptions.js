@@ -1,53 +1,54 @@
+import assets from "./assets"
 const modalOptions = [
     {
         id: 1,
         name: "Settings",
-        logo: ""
+        logo: assets.settings,
     },
     {
         id: 2,
         name: "Friends",
-        logo: ""
+        logo: assets.friends,
     },
     {
         id: 3,
         name: "Contacts",
-        logo: ""
+        logo: assets.contacts,
     },
     {
         id: 4,
         name: "Your Activity",
-        logo: ""
+        logo: assets.activity,
     },
     {
         id: 5,
         name: "Archive",
-        logo: ""
+        logo: assets.archive,
     },
     {
         id: 6,
         name: "Saved",
-        logo: ""
+        logo: assets.saved,
     },
     {
         id: 7,
         name: "Favorited",
-        logo: ""
-    },
-    {
-        id: 7,
-        name: "Acquanted",
-        logo: ""
+        logo: assets.favorited,
     },
     {
         id: 8,
-        name: "Close Friends",
-        logo: ""
+        name: "Acquainted",
+        logo: assets.acquainted,
     },
     {
         id: 9,
-        name: "Favorites",
-        logo: ""
+        name: "Close Friends",
+        logo: assets.closeFriends,
+    },
+    {
+        id: 10,
+        name: "Inbox",
+        logo: assets.inbox,
     },
 ]
 

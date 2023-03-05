@@ -30,6 +30,7 @@ class ViewModel {
         this.searchFriendsResults = Users[0].friends;
         this.firstname = Users[0].firstname;
         this.modalVisible = false;
+        this.modalOptions = modalOptions;
         console.log("User: " + this.user.username + " logged in");
         navigation.navigate('AppScreens');
     }
