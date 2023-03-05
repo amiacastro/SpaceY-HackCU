@@ -3,7 +3,7 @@ import { View, Text, Image, TextInput, StyleSheet } from "react-native";
 
 import { COLORS, FONTS, SIZES, assets } from "../constants";
 
-const FriendsHeader = (onSearch) => {
+const FriendsHeader = ({onSearch}) => {
   return (
     <View style={styles.container}>
       <View style={styles.spacing}>
