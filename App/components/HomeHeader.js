@@ -1,60 +1,24 @@
 import React from "react";
-import { View, Text, Image, TextInput } from "react-native";
+import { View, Text, Image, TextInput, StyleSheet } from "react-native";
 
 import { COLORS, FONTS, SIZES, assets } from "../constants";
 
 const HomeHeader = ({ onSearch }) => {
   return (
-    <View
-      style={{
-        backgroundColor: COLORS.primary,
-        padding: SIZES.font,
-      }}
-    >
-      <View
-        style={{
-          flexDirection: "row",
-          justifyContent: "space-between",
-          alignItems: "center",
-        }}
-      >
-    </View>
-
+    <View style={styles.container}>
+      <View style={styles.spacing}>
+      </View>
       <View style={{ marginVertical: SIZES.font }}>
-        <Text
-          style={{
-            fontFamily: FONTS.regular,
-            fontSize: SIZES.small,
-            color: COLORS.white,
-          }}
-        >
+        <Text style={styles.greeting} >
           Hello Victoria 👋
         </Text>
-
-        <Text
-          style={{
-            fontFamily: FONTS.bold,
-            fontSize: SIZES.large,
-            color: COLORS.white,
-            marginTop: SIZES.base / 2,
-          }}
-        >
+        <Text style={styles.header}>
           Ur Mom
         </Text>
       </View>
 
       <View style={{ marginTop: SIZES.font }}>
-        <View
-          style={{
-            width: "100%",
-            borderRadius: SIZES.font,
-            backgroundColor: COLORS.gray,
-            flexDirection: "row",
-            alignItems: "center",
-            paddingHorizontal: SIZES.font,
-            paddingVertical: SIZES.small - 2,
-          }}
-        >
+        <View style={styles.searchBar}>
           <Image
             source={assets.search}
             resizeMode="contain"
@@ -70,5 +34,38 @@ const HomeHeader = ({ onSearch }) => {
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: COLORS.primary,
+    padding: SIZES.font,
+  },
+  spacing: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+  },
+  greeting: {
+    fontFamily: FONTS.regular,
+    fontSize: SIZES.small,
+    color: COLORS.white,
+  },
+  header: {
+    fontFamily: FONTS.bold,
+    fontSize: SIZES.large,
+    color: COLORS.white,
+    marginTop: SIZES.base / 2,
+  },
+  searchBar: {
+    width: "100%",
+    borderRadius: SIZES.font,
+    backgroundColor: COLORS.gray,
+    flexDirection: "row",
+    alignItems: "center",
+    paddingHorizontal: SIZES.font,
+    paddingVertical: SIZES.small - 2,
+  }
+
+});
 
 export default HomeHeader;

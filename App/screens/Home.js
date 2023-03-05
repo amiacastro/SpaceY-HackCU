@@ -8,7 +8,7 @@ import { HomeHeader, FocusedStatusBar } from '../components';
 const Home = ({navigation}) => {
   return (
     <SafeAreaView style={styles.container}>
-      <FocusedStatusBar background={COLORS.black} />
+      <FocusedStatusBar background={COLORS.primary} />
 
       <View style={{ flex: 1}}>
         <View style={{zIndex: 0}}>
