@@ -2,8 +2,8 @@ import React from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, SafeAreaView, TouchableHighlight, TextInput } from 'react-native';
 import { COLORS, SIZES, FONTS} from '../constants';
-export default function Login() {
-  const loginPress = () => console.log("Log in pressed");
+
+export default function Login({navigation}) {
   const [username, onChangeUsername] = React.useState('');
   const [password, onChangePass] = React.useState('');
   return (
@@ -24,7 +24,7 @@ export default function Login() {
       />
       <TouchableHighlight
           style={styles.loginButton}
-          onPress={loginPress}
+          onPress={() => navigation.navigate('AppScreens')}
           underlayColor="#DDDDDD">
           <Text style={styles.loginText}>Log In</Text>
       </TouchableHighlight>

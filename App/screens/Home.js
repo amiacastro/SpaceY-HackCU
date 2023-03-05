@@ -10,17 +10,14 @@ const Home = ({ navigation }) => {
         <SafeAreaView style={styles.container}>
             <FocusedStatusBar background={COLORS.primary} />
 
-            <View style={{ flex: 1 }}>
-                <View style={{ zIndex: 0 }}>
-                    <HomeHeader />
-                    <Button
-                        title="Go to Friends"
-                        onPress={() => navigation.navigate('Friends')}
-                    />
-                </View>
-            </View>
-        </SafeAreaView>
-    )
+      <View style={{ flex: 1}}>
+        <View style={{zIndex: 0}}>
+        <HomeHeader/>
+          <Text>This is the Home Page</Text>
+        </View>
+      </View>
+    </SafeAreaView>
+  )
 }
 
 const styles = StyleSheet.create({
