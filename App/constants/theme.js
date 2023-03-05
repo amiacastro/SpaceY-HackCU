@@ -1,14 +1,21 @@
 export const COLORS = {
-  primary: "#001F2D",
-  secondary: "#4D626C",
+  // primary: "#001F2D",
+  // secondary: "#4D626C",
 
   white: "#FFF",
   gray: "#74858C",
   black: "#000000",
+
   pastel_light_blue: "#B9F3FC",
   pastel_medium_blue: "#B9F3FC",
   pastel_darker_blue: "#93C6E7",
   pastel_pink: "#FEDEFF",
+
+  primary: '#E8C4C4',
+  background: '#F2E5E5',
+  card: '#FFF',
+  text: '#2B3A55',
+  notification: '#CE7777',
 };
 
 export const SIZES = {
