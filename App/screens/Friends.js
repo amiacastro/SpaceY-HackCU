@@ -6,6 +6,7 @@ import { Dimensions } from 'react-native';
 import ViewModelInstance from '../ViewModel';
 
 const Friends = ({navigation}) => {
+    const [list, setList] = useState([{id:1,val:<MyFriends />}, {id:2,val:<Requests handleRequest={handleRequest} />}]);
     const [index, setIndex] = useState(0);
 
     const handleRequest = (val, person) => {
@@ -20,14 +21,13 @@ const Friends = ({navigation}) => {
     const handleSearch = (value) => {
         ViewModelInstance.searchFriends(value);
         setList([{id:1,val:<MyFriends />}, {id:2,val:<Requests handleRequest={handleRequest} />}]);
+        console.log(ViewModelInstance.searchFriendsResults);
     };
 
     const onViewableItemsChanged = useCallback(({ viewableItems, changed }) => {
-        console.log("Visible items are", viewableItems[0].index);
         setIndex(viewableItems[0].index);
     }, []);
 
-    const [list, setList] = useState([{id:1,val:<MyFriends />}, {id:2,val:<Requests handleRequest={handleRequest} />}]);
 
     return (
         <SafeAreaView style={{ flex:1 }}>
@@ -56,7 +56,7 @@ const Friends = ({navigation}) => {
 const Requests = ({handleRequest}) => {
     return (
         <View style={{ flex:1 , width:Dimensions.get('window').width}}>
-            <FlatList 
+            <FlatList
                 data={ViewModelInstance.friendRequests}
                 renderItem={({item}) => <Request person={item} handleRequest={handleRequest}/>}
                 keyExtractor={item => item.id}

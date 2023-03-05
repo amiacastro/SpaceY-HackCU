@@ -46,35 +46,37 @@ const Users = [
                 lastname: "Swift",
                 image: assets.person04,
             }
+        ],
+        others: [
+            {
+                id: 2,
+                username: "acastro",
+                password: "12345",
+                firstname: "Amia",
+                lastname: "Castro",
+                image: assets.person03,
+                friends: [],
+            },
+            {
+                id: 3,
+                username: "fsandovalgarza",
+                password: "12345",
+                firstname: "Fernando",
+                lastname: "Sandoval Garza",
+                image: assets.person02,
+                friends: []
+            },
+            {
+                id: 4,
+                username: "csmith",
+                password: "12345",
+                firstname: "Cailyn",
+                lastname: "Smith",
+                image: assets.person04,
+                friends: []
+            },
         ]
-    },
-    {
-        id: 2,
-        username: "acastro",
-        password: "12345",
-        firstname: "Amia",
-        lastname: "Castro",
-        image: assets.person03,
-        friends: []
-    },
-    {
-        id: 3,
-        username: "fsandovalgarza",
-        password: "12345",
-        firstname: "Fernando",
-        lastname: "Sandoval Garza",
-        image: assets.person02,
-        friends: []
-    },
-    {
-        id: 4,
-        username: "csmith",
-        password: "12345",
-        firstname: "Cailyn",
-        lastname: "Smith",
-        image: assets.person04,
-        friends: []
-    },
+    }
 ]
 
 export { Users };

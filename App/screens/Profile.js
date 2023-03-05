@@ -44,12 +44,16 @@ const Profile = ({ navigation }) => {
                         />
                     </View>
                 </Modal>
+            </View>
+
+            <View style={styles.modalButton}>
                 <Pressable
                     // onPress={() => ViewModelInstance.setModal(true)}>       
                     onPress={() => setModalVisible(true)}>
                     <Text>Options</Text>
                 </Pressable>
             </View>
+
 
             {/* Events that have been made */}
 
@@ -69,7 +73,7 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        marginTop: 22,
+        // marginTop: 50,
         alignItems: 'center'
     },
     modalContent: {
@@ -84,7 +88,13 @@ const styles = StyleSheet.create({
     },
     close: {
         fontSize: SIZES.large,
-        fontWeight: FONTS.bold,
+        fontWeight: 'bold',
+    },
+    modalButton: {
+        alignContent: 'center',
+        alignItems: 'center',
+        fontSize: SIZES.large,
+        fontWeight: 'bold'
     }
 
 });
