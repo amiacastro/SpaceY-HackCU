@@ -40,6 +40,12 @@ const Profile = ({ navigation }) => {
                                     <Text style={styles.close}>Close</Text>
                                 </Pressable>
                             </View>
+                            <FlatList
+                                data={ViewModelInstance.modalOptions}
+                                // renderItem={({item}) => <Text>{item.name}</Text>}
+                                renderItem={({ item }) => <ModalCard data={item} />}
+                                keyExtractor={(item) => item.id}
+                            />
                         </View>
                     </Modal>
                 </View>
@@ -51,8 +57,6 @@ const Profile = ({ navigation }) => {
                         <Text style={styles.optionStyle}>Options</Text>
                     </Pressable>
                 </View>
-
-
                 {/* Events that have been made */}
 
             </SafeAreaView >
@@ -91,10 +95,11 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
     },
     modalButton: {
-        alignContent: 'center',
+        // alignContent: 'center',
         alignItems: 'center',
         fontSize: SIZES.large,
-        fontWeight: 'bold'
+        fontWeight: 'bold',
+        marginBottom: 400,
     },
     optionStyle: {
         fontSize: 15,
