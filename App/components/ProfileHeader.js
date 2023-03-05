@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
         height: 60,
     },
     username: {
-        
+        marginTop: 10
     }
 });
 
