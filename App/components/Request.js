@@ -14,10 +14,10 @@ const Request = ({person, handleRequest}) => {
             </View>
             <View style={{flex: 1, flexDirection: "row", gap: 15, justifyContent: 'flex-end', alignItems: "center", fontSize: SIZES.medium}}>
                 <Pressable onPress={() => handleRequest(1,person)}>
-                    <Text style={{color: COLORS.pastel_darker_blue }}>Accept</Text>
+                    <Text style={{color: "blue" }}>Accept</Text>
                 </Pressable>
                 <Pressable onPress={() => handleRequest(0,person)}>
-                    <Text style={{color: COLORS.pastel_darker_pink}}>Decline</Text>
+                    <Text style={{color: "red"}}>Decline</Text>
                 </Pressable>
             </View>
         </View>
