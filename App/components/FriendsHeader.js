@@ -6,16 +6,9 @@ import { COLORS, FONTS, SIZES, assets } from "../constants";
 const FriendsHeader = ({onSearch}) => {
   return (
     <View style={styles.container}>
-      <View style={styles.spacing}>
-      </View>
-      <View style={{ marginVertical: SIZES.font }}>
-        <Text style={styles.greeting} >
-          Hello Victoria 👋
-        </Text>
-        <Text style={styles.header}>
-          This is the Home Page
-        </Text>
-      </View>
+        <View style={styles.spacing}>
+            
+        </View>
 
       <View style={{ marginTop: SIZES.font }}>
         <View style={styles.searchBar}>

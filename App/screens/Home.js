@@ -13,8 +13,8 @@ const Home = ({ navigation }) => {
       <FocusedStatusBar background={COLORS.primary} />
       <View style={{ flex: 1}}>
         <View style={{zIndex: 0}}>
-        <HomeHeader name={ViewModelInstance.name}/>
-        <Text>This is the Home Page</Text>
+        <HomeHeader name={ViewModelInstance.firstname}/>
+          <Text>This is the Home Page</Text>
         </View>
       </View>
     </SafeAreaView>

@@ -5,7 +5,7 @@ class ViewModel {
         this.user;
         this.firstname;
         this.friends;
-        this.searchedFriends;
+        this.searchFriendsResults;
     }
 
     login(username, password, navigation) {
@@ -20,22 +20,26 @@ class ViewModel {
         //     alert("Invalid username or password");
         // }
         this.user = Users[0];
-        this.friends = Users[0].friends;
-        this.searchedFriends = Users[0].friends;
+        this.friends = Users[0].friends;;
         this.firstname = Users[0].firstname;
+        console.log("User: " + this.user.username + " logged in");
         navigation.navigate('AppScreens');
     }
 
     searchFriends(value) {
-        if (!value.length) return this.searchedFriends = this.friends;
+        console.log(value);
+        if (!value.length) {
+            this.searchFriendsResults = this.friends;
+            return;
+        }
 
         const filteredData = this.friends.filter((item) =>
             item.name.toLowerCase().includes(value.toLowerCase()));
 
         if (filteredData.length) {
-            this.searchedFriends = filteredData;
+            this.searchFriendsResults = filteredData;
         } else {
-            this.searchedFriends = this.friends;
+            this.searchFriendsResults = this.friends;
         }
     }
 }
