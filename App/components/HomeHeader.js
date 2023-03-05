@@ -37,7 +37,7 @@ const HomeHeader = ({ onSearch }) => {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: COLORS.primary,
+    backgroundColor: COLORS.pastel_darker_blue,
     padding: SIZES.font,
   },
   spacing: {
@@ -59,7 +59,7 @@ const styles = StyleSheet.create({
   searchBar: {
     width: "100%",
     borderRadius: SIZES.font,
-    backgroundColor: COLORS.gray,
+    backgroundColor: COLORS.pastel_pink,
     flexDirection: "row",
     alignItems: "center",
     paddingHorizontal: SIZES.font,
