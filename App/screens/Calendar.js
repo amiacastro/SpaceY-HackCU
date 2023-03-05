@@ -13,28 +13,39 @@ const Calendar = () => {
   const [items, setItems] = useState({});
 
   //TODO: read events and labels from a file instead
-  const events = []
-  for (let i = 0; i < 0; i++) {
-    events[i] = "Event number " + i
-  }
-  const labels = ["A", "B", "C", "D", "E"]
+  let dayEvents1 = [];
+  let dayEvents2 = [];
+  let dayEvents3 = [];
+  dayEvents1 = ["Event 1", "Event 2"];
+  dayEvents3 = ["Event 3", "Event 4"];
+  const events = [dayEvents1, dayEvents2, dayEvents3];
+  let dayLabels1 = [];
+  let dayLabels2 = [];
+  let dayLabels3 = [];
+  dayLabels1 = ["A", "B"];
+  dayLabels3 = ["C", "D"];
+  const labels = [dayLabels1, dayLabels2, dayLabels3];
 
   const loadItems = (day) => {
     setTimeout(() => {
+      let date = 0;
       for (let i = -15; i < 85; i++) {
         const time = day.timestamp + i * 24 * 60 * 60 * 1000;
         const strTime = timeToString(time);
         if (!items[strTime]) {
-          items[strTime] = [];
-          const numItems = events.length;
-          for (let j = 0; j < numItems; j++) {
-            items[strTime].push({
-              name: events[j],
-              label: labels[j],
-              height: Math.max(50, Math.floor(Math.random() * 150)),
-            });
-          }
+          items[strTime] = []; 
+          if(events[date]!=null){
+            const numItems = events[date].length;
+            for (let j = 0; j < numItems; j++) {
+              items[strTime].push({
+                name: events[date][j],
+                label: labels[date][j],
+                height: Math.max(50, Math.floor(Math.random() * 150)),
+              });
+            }
         }
+        }
+        date = date + 1;
       }
       const newItems = {};
       Object.keys(items).forEach((key) => {
@@ -54,6 +65,7 @@ const Calendar = () => {
                 flexDirection: 'row',
                 justifyContent: 'space-between',
                 alignItems: 'center',
+                
               }}>
               <Text>{item.name}</Text>
               <Avatar.Text label={item.label}/>
@@ -94,6 +106,9 @@ const Calendar = () => {
           selectedDayBackgroundColor: '#00adf5',
         }}
         renderEmptyDate={renderEmptyDate}
+        rowHasChanged={(r1, r2) => {
+          return r1.text !== r2.text;
+        }}
       />
     </SafeAreaView>
   );
@@ -110,9 +125,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   emptyDateText: {
-    fontSize: SIZES.medium,
+    fontSize: SIZES.large,
     color: COLORS.gray,
-    fontFamily: FONTS.medium
   },
   createEventContainer:{
     alignItems: 'center',
