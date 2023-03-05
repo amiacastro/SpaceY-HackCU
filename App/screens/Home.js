@@ -2,12 +2,8 @@ import { useState } from 'react';
 import { Button, View, SafeAreaView, FlatList, Text, StyleSheet } from 'react-native';
 import { COLORS } from '../constants';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-
-<<<<<<< HEAD
 import { HomeHeader, FocusedStatusBar, Calendar} from '../components';
-=======
-import { HomeHeader, FocusedStatusBar } from '../components';
->>>>>>> 4bccd97a2ac87d850836f41e9f471c5d7bcf0690
+
 
 import ViewModelInstance from '../ViewModel';
 
