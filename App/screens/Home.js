@@ -25,11 +25,7 @@ const Home = ({ navigation }) => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-<<<<<<< HEAD
         backgroundColor: COLORS.white, 
-=======
-        backgroundColor: COLORS.white,
->>>>>>> ba4c4a09018593ac73dd9d34623b2237e56a8b2c
     }
 });
 
