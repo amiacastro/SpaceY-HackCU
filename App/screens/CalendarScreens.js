@@ -16,7 +16,7 @@ const CalendarScreens = () => {
               screenOptions={{ headerShown: false}}
               initialRouteName = "Calendar"
               >
-                    <Stack.Screen name="Calender" component={Calendar}/>
+                    <Stack.Screen name="Calendar" component={Calendar}/>
                     <Stack.Screen name="NewEvent" component={NewEvent}/>
               </Stack.Navigator>
           </NavigationContainer>
