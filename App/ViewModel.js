@@ -56,6 +56,10 @@ class ViewModel {
         navigation.navigate('AppScreens');
     }
 
+    newEvent(friend, hour, min, ampm){
+        
+    }
+
     searchFriends(value) {
         console.log(value);
         if (!value.length) {

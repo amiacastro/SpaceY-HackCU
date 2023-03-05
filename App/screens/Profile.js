@@ -13,11 +13,12 @@ const Profile = ({ navigation }) => {
                 {/* Header */}
                 <ProfileHeader username={ViewModelInstance.user.username} />
 
-
                 {/* Profile picture */}
                 <View style={styles.imageStyling}>
                     <Image source={ViewModelInstance.user.image} style={{ width: 300, height: 300, borderRadius: 25, marginTop: 5 }} />
+                    <Text style={{ color: COLORS.black, ...SIZES.title, fontWeight: "bold", marginTop: 5 }}>{ViewModelInstance.user.firstname} {ViewModelInstance.user.lastname}</Text>
                 </View>
+
                 <View style={styles.container}>
                     <Modal
                         animationType="slide"
@@ -39,12 +40,6 @@ const Profile = ({ navigation }) => {
                                     <Text style={styles.close}>Close</Text>
                                 </Pressable>
                             </View>
-                            <FlatList
-                                data={ViewModelInstance.modalOptions}
-                                // renderItem={({item}) => <Text>{item.name}</Text>}
-                                renderItem={({ item }) => <ModalCard data={item} />}
-                                keyExtractor={(item) => item.id}
-                            />
                         </View>
                     </Modal>
                 </View>
@@ -113,6 +108,7 @@ const styles = StyleSheet.create({
         height: '100%',
     },
     wrapper: {
+        flex: 1,
         width: '100%',
         height: '100%',
     }

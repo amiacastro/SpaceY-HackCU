@@ -12,7 +12,7 @@ const timeToString = (time) => {
   return date.toISOString().split('T')[0];
 };
 
-const Calendar = () => {
+const Calendar = ({ navigation }) => {
   const [items, setItems] = useState({});
 
   //TODO: read events and labels from a file instead
@@ -96,8 +96,7 @@ const Calendar = () => {
         <SafeAreaView style={styles.createEventContainer}>
           <TouchableHighlight
             style={styles.createEventButton}
-            onPress={() => console.log("creating event")}
-            // onPress={() => NavigationPreloadManager.navigate("NewEvent")}
+            onPress={() => navigation.navigate("NewEvent")}
             underlayColor="primary">
             <Text style={styles.createEventText}>Create Event</Text>
           </TouchableHighlight>
@@ -111,7 +110,7 @@ const Calendar = () => {
           showClosingKnob={true}
           theme={{
             agendaKnobColor: 'gray',
-            // selectedDayBackgroundColor: '#00adf5',
+            selectedDayBackgroundColor: '#00adf5',
           }}
           renderEmptyDate={renderEmptyDate}
           rowHasChanged={(r1, r2) => {
