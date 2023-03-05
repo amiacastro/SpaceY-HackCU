@@ -7,7 +7,7 @@ const Users = [
         password: "12345",
         firstname: "Albert",
         lastname: "Phan",
-        image: assets.person01,
+        image: assets.aphan,
         requests: [
             {
                 id: 9,

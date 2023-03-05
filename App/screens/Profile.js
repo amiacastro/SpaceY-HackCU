@@ -64,7 +64,7 @@ const Profile = ({ navigation }) => {
 const styles = StyleSheet.create({
     imageStyling: {
         width: '100%',
-        height: 400,
+        height: 350,
         alignItems: 'center',
         padding: 5,
         justifyContent: 'center',
