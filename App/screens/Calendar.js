@@ -1,8 +1,8 @@
-import React, {useState} from 'react';
-import {SafeAreaView, TouchableOpacity, Text, Image, StyleSheet, TouchableHighlight} from 'react-native';
-import {Agenda} from 'react-native-calendars';
-import {Card} from 'react-native-paper';
-import { COLORS, SIZES, FONTS} from '../constants';
+import React, { useState } from 'react';
+import { SafeAreaView, TouchableOpacity, Text, Image, StyleSheet, TouchableHighlight, ImageBackground } from 'react-native';
+import { Agenda } from 'react-native-calendars';
+import { Card } from 'react-native-paper';
+import { COLORS, SIZES, FONTS, assets } from '../constants';
 import { createStackNavigator } from '@react-navigation/stack';
 
 import ViewModelInstance from '../ViewModel';
@@ -16,19 +16,19 @@ const Calendar = () => {
   const [items, setItems] = useState({});
 
   //TODO: read events and labels from a file instead
-//   let dayEvents1 = [];
-//   let dayEvents2 = [];
-//   let dayEvents3 = [];
-//   dayEvents1 = ["Event 1", "Event 2"];
-//   dayEvents3 = ["Event 3", "Event 4"];
-//   const events = [dayEvents1, dayEvents2, dayEvents3];
-//   let dayLabels1 = [];
-//   let dayLabels2 = [];
-//   let dayLabels3 = [];
-//   dayLabels1 = ["A", "B"];
-//   dayLabels3 = ["C", "D"];
-//   const labels = [dayLabels1, dayLabels2, dayLabels3];
-    const events = ViewModelInstance.getEvents();
+  //   let dayEvents1 = [];
+  //   let dayEvents2 = [];
+  //   let dayEvents3 = [];
+  //   dayEvents1 = ["Event 1", "Event 2"];
+  //   dayEvents3 = ["Event 3", "Event 4"];
+  //   const events = [dayEvents1, dayEvents2, dayEvents3];
+  //   let dayLabels1 = [];
+  //   let dayLabels2 = [];
+  //   let dayLabels3 = [];
+  //   dayLabels1 = ["A", "B"];
+  //   dayLabels3 = ["C", "D"];
+  //   const labels = [dayLabels1, dayLabels2, dayLabels3];
+  const events = ViewModelInstance.getEvents();
 
 
   const loadItems = (day) => {
@@ -39,7 +39,7 @@ const Calendar = () => {
         const strTime = timeToString(time);
         if (!items[strTime]) {
           items[strTime] = [];
-          if(events[date]!=null){
+          if (events[date] != null) {
             const numItems = events[date].length;
             for (let j = 0; j < numItems; j++) {
               items[strTime].push({
@@ -47,7 +47,7 @@ const Calendar = () => {
                 height: Math.max(50, Math.floor(Math.random() * 150)),
               });
             }
-        }
+          }
         }
         date = date + 1;
       }
@@ -61,7 +61,7 @@ const Calendar = () => {
 
   const renderItem = (item) => {
     return (
-      <TouchableOpacity style={{marginRight: 10, marginTop: 17}}>
+      <TouchableOpacity style={{ marginRight: 10, marginTop: 17 }}>
         <Card>
           <Card.Content>
             <SafeAreaView
@@ -69,10 +69,10 @@ const Calendar = () => {
                 flexDirection: 'row',
                 justifyContent: 'space-between',
                 alignItems: 'center',
-                
+
               }}>
               <Text>{item.title}</Text>
-              <Image source={item.image} style={{width: 50, height: 50, borderRadius: 25}}/>
+              <Image source={item.image} style={{ width: 50, height: 50, borderRadius: 25 }} />
             </SafeAreaView>
           </Card.Content>
         </Card>
@@ -82,44 +82,48 @@ const Calendar = () => {
 
   const renderEmptyDate = () => {
     return (
+      // <ImageBackground source={assets.gradient5} resizeMode="cover" style={styles.image}>
       <SafeAreaView style={styles.emptyDateContainer}>
         <Text style={styles.emptyDate}>You have nothing scheduled!</Text>
       </SafeAreaView>
+      // </ImageBackground>
     );
   };
 
   return (
-    <SafeAreaView style={styles.container}>
+    <ImageBackground source={assets.gradient5} resizeMode="cover" style={styles.image}>
+      <SafeAreaView style={styles.container}>
         <SafeAreaView style={styles.createEventContainer}>
-            <TouchableHighlight
-                style={styles.createEventButton}
-                onPress={() => console.log("creating event")}
-                // onPress={() => NavigationPreloadManager.navigate("NewEvent")}
-                underlayColor="primary">
-                <Text style={styles.createEventText}>Create Event</Text>
-            </TouchableHighlight>
+          <TouchableHighlight
+            style={styles.createEventButton}
+            onPress={() => console.log("creating event")}
+            // onPress={() => NavigationPreloadManager.navigate("NewEvent")}
+            underlayColor="primary">
+            <Text style={styles.createEventText}>Create Event</Text>
+          </TouchableHighlight>
+        </SafeAreaView>
+        <Agenda
+          items={items}
+          loadItemsForMonth={loadItems}
+          selected={'2023-03-04'}
+          renderItem={renderItem}
+          showOnlySelectedDayItems={true}
+          showClosingKnob={true}
+          theme={{
+            agendaKnobColor: 'gray',
+            // selectedDayBackgroundColor: '#00adf5',
+          }}
+          renderEmptyDate={renderEmptyDate}
+          rowHasChanged={(r1, r2) => {
+            return r1.text !== r2.text;
+          }}
+        />
       </SafeAreaView>
-      <Agenda
-        items={items}
-        loadItemsForMonth={loadItems}
-        selected={'2023-03-04'}
-        renderItem={renderItem}
-        showOnlySelectedDayItems={true}
-        showClosingKnob={true}
-        theme={{
-          agendaKnobColor: 'gray',
-          selectedDayBackgroundColor: '#00adf5',
-        }}
-        renderEmptyDate={renderEmptyDate}
-        rowHasChanged={(r1, r2) => {
-          return r1.text !== r2.text;
-        }}
-      />
-    </SafeAreaView>
+    </ImageBackground>
   );
 };
 const styles = StyleSheet.create({
-  container:{
+  container: {
     flex: 1,
   },
   emptyDateContainer: {
@@ -133,28 +137,34 @@ const styles = StyleSheet.create({
     fontSize: SIZES.large,
     color: COLORS.gray,
   },
-  createEventContainer:{
+  createEventContainer: {
     alignItems: 'center',
     justifyContent: 'center',
   },
-  createEventText:{
+  createEventText: {
     color: COLORS.white,
-    textAlign:'center',
-    paddingLeft : 10,
-    paddingRight : 10,
+    textAlign: 'center',
+    paddingLeft: 10,
+    paddingRight: 10,
     fontSize: SIZES.medium
   },
-  createEventButton:{
-    marginRight:40,
-    marginLeft:40,
-    marginBottom:7,
-    paddingTop:"3%",
-    paddingBottom:"3%",
+  createEventButton: {
+    marginRight: 40,
+    marginLeft: 40,
+    marginBottom: 7,
+    paddingTop: "3%",
+    paddingBottom: "3%",
     width: "40%",
     backgroundColor: COLORS.gray,
-    borderRadius:8,
+    borderRadius: 8,
     borderWidth: 1,
     borderColor: COLORS.white
+  },
+  image: {
+    flex: 1,
+    justifyContent: 'center',
+    width: '100%',
+    height: '100%',
   },
 });
 export default Calendar;

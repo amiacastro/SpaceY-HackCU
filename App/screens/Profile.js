@@ -8,59 +8,61 @@ const Profile = ({ navigation }) => {
     const [modalVisible, setModalVisible] = useState(false);
 
     return (
-        <SafeAreaView style={styles.wrapper}>
-            {/* Header */}
-            <ProfileHeader username={ViewModelInstance.user.username} />
-            <ImageBackground source={assets.gradient4} resizeMode="cover" style={styles.image}>
+        <ImageBackground source={assets.gradient4} resizeMode="cover" style={styles.image}>
+            <SafeAreaView style={styles.wrapper}>
+                {/* Header */}
+                <ProfileHeader username={ViewModelInstance.user.username} />
 
-            {/* Profile picture */}
-            <View style={styles.imageStyling}>
-                <Image source={ViewModelInstance.user.image} style={{ width: 300, height: 300, borderRadius: 25, marginTop: 5 }} />
-            </View>
-            <View style={styles.container}>
-                <Modal
-                    animationType="slide"
-                    transparent={true}
-                    visible={modalVisible}
-                    // visible={ViewModelInstance.modalVisible}
-                    onRequestClose={() => {
-                        Alert.alert('Modal has been closed.');
-                        setModalVisible(!modalVisible);
-                        // ViewModelInstance.setModal(!ViewModelInstance.modalVisible);
-                        // ViewModelInstance.modalVisible = !ViewModelInstance.modalVisible;
-                    }}>
-                    <View style={styles.modalContent}>
-                        <View style={styles.closeContainer}>
-                            <Pressable
-                                // onPress={() => ViewModelInstance.modalVisible = !ViewModelInstance.modalVisible}>                        
-                                // onPress={() => ViewModelInstance.setModal(!ViewModelInstance.modalVisible)}>
-                                onPress={() => setModalVisible(!modalVisible)}>
-                                <Text style={styles.close}>Close</Text>
-                            </Pressable>
+
+                {/* Profile picture */}
+                <View style={styles.imageStyling}>
+                    <Image source={ViewModelInstance.user.image} style={{ width: 300, height: 300, borderRadius: 25, marginTop: 5 }} />
+                </View>
+                <View style={styles.container}>
+                    <Modal
+                        animationType="slide"
+                        transparent={true}
+                        visible={modalVisible}
+                        // visible={ViewModelInstance.modalVisible}
+                        onRequestClose={() => {
+                            Alert.alert('Modal has been closed.');
+                            setModalVisible(!modalVisible);
+                            // ViewModelInstance.setModal(!ViewModelInstance.modalVisible);
+                            // ViewModelInstance.modalVisible = !ViewModelInstance.modalVisible;
+                        }}>
+                        <View style={styles.modalContent}>
+                            <View style={styles.closeContainer}>
+                                <Pressable
+                                    // onPress={() => ViewModelInstance.modalVisible = !ViewModelInstance.modalVisible}>                        
+                                    // onPress={() => ViewModelInstance.setModal(!ViewModelInstance.modalVisible)}>
+                                    onPress={() => setModalVisible(!modalVisible)}>
+                                    <Text style={styles.close}>Close</Text>
+                                </Pressable>
+                            </View>
+                            <FlatList
+                                data={ViewModelInstance.modalOptions}
+                                // renderItem={({item}) => <Text>{item.name}</Text>}
+                                renderItem={({ item }) => <ModalCard data={item} />}
+                                keyExtractor={(item) => item.id}
+                            />
                         </View>
-                        <FlatList
-                            data={ViewModelInstance.modalOptions}
-                            // renderItem={({item}) => <Text>{item.name}</Text>}
-                            renderItem={({ item }) => <ModalCard data={item} />}
-                            keyExtractor={(item) => item.id}
-                        />
-                    </View>
-                </Modal>
-            </View>
+                    </Modal>
+                </View>
 
-            <View style={styles.modalButton}>
-                <Pressable
-                    // onPress={() => ViewModelInstance.setModal(true)}>       
-                    onPress={() => setModalVisible(true)}>
-                    <Text style={styles.optionStyle}>Options</Text>
-                </Pressable>
-            </View>
-            </ImageBackground>
+                <View style={styles.modalButton}>
+                    <Pressable
+                        // onPress={() => ViewModelInstance.setModal(true)}>       
+                        onPress={() => setModalVisible(true)}>
+                        <Text style={styles.optionStyle}>Options</Text>
+                    </Pressable>
+                </View>
 
-            {/* Events that have been made */}
-        
+
+                {/* Events that have been made */}
+
             </SafeAreaView >
-      
+        </ImageBackground>
+
     )
 }
 
