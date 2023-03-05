@@ -16,21 +16,6 @@ const HomeHeader = ({name}) => {
         This is the Home Page
         </Text>
       </View>
-
-      <View style={{ marginTop: SIZES.font }}>
-        {/* <View style={styles.searchBar}>
-          <Image
-            source={assets.search}
-            resizeMode="contain"
-            style={{ width: 20, height: 20, marginRight: SIZES.base }}
-          />
-          <TextInput
-            placeholder="Search Friends"
-            style={{ flex: 1 }}
-            onChangeText={onSearch}
-          />
-        </View> */}
-      </View>
     </View>
   );
 };
@@ -47,12 +32,12 @@ const styles = StyleSheet.create({
   },
   greeting: {
     fontFamily: FONTS.regular,
-    fontSize: SIZES.small,
+    fontSize: SIZES.medium,
     color: COLORS.white,
   },
   header: {
     fontFamily: FONTS.bold,
-    fontSize: SIZES.large,
+    fontSize: SIZES.extraLarge,
     color: COLORS.paste,
     marginTop: SIZES.base / 2,
   },
