@@ -1,12 +1,11 @@
 import { useState } from 'react';
 import { Button, FlatList, SafeAreaView, Text, View } from 'react-native';
 import { Friend, HomeHeader, FriendsHeader } from '../components';
-import { FriendData } from '../constants';
 
 import ViewModelInstance from '../ViewModel';
 
 const Friends = ({navigation}) => {
-    const [searchfriendData, setFriendData] = useState(ViewModelInstance.visibleFriends);
+    const [searchFriendData, setFriendData] = useState(ViewModelInstance.visibleFriends);
     
     const handleSearch = (value) => {
         ViewModelInstance.searchFriends(value);
@@ -15,7 +14,7 @@ const Friends = ({navigation}) => {
     return (
         <SafeAreaView style={{ flex:1 }}>
             <FlatList 
-                data={searchfriendData}
+                data={searchFriendData}
                 renderItem={({item}) => <Friend friend={item} navigation={navigation} />}
                 keyExtractor={item => item.id}
                 showsVerticalScrollIndicator={false}
