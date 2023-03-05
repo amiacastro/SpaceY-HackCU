@@ -1,27 +1,35 @@
 import React from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, SafeAreaView, Button, TextInput } from 'react-native';
-
+import { StyleSheet, Text, SafeAreaView, TouchableHighlight, TextInput } from 'react-native';
+import { COLORS, SIZES, FONTS} from '../constants';
 export default function Login() {
   const loginPress = () => console.log("Log in pressed");
-  const [username, onChangeText] = React.useState('');
+  const [username, onChangeUsername] = React.useState('');
+  const [password, onChangePass] = React.useState('');
   return (
     <SafeAreaView style={styles.container}>
-      <Text>Welcome to Huddle!</Text>
-      <Text>Create an Account or Login Below</Text>
+      <Text style={styles.title}>Welcome to Huddle!</Text>
+      <Text style={styles.subtitle}>Create an Account or Login Below</Text>
+      <Text style={styles.normalText}>Username: </Text>
       <TextInput
         style={styles.input}
-        onChangeText={(val) => onChangeText(val)}
+        onChangeText={(val) => onChangeUsername(val)}
         value={username}
       />
-      <Button
-        title="Log In"
-        onPress={loginPress}
+      <Text style={styles.normalText}>Password: </Text>
+      <TextInput
+        style={styles.input}
+        onChangeText={(val) => onChangePass(val)}
+        value={password}
       />
+      <TouchableHighlight
+          style={styles.loginButton}
+          onPress={loginPress}
+          underlayColor="#DDDDDD">
+          <Text style={styles.loginText}>Log In</Text>
+      </TouchableHighlight>
+      <Text style={styles.createAccount}>New to Huddle? Create An Account</Text>
       <StatusBar style="auto" />
-      <Text>
-        username: {username}
-      </Text>
     </SafeAreaView>
   );
 }
@@ -29,14 +37,60 @@ export default function Login() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: COLORS.primary,
     alignItems: 'center',
     justifyContent: 'center',
   },
-  input: {
-    height: 40,
-    margin: 12,
-    borderWidth: 1,
-    padding: 10,
+  title:{
+    fontSize: SIZES.title,
+    paddingBottom: "10%",
+    color: COLORS.secondary,
+    textAlign: 'center',
   },
+  subtitle:{
+    fontSize: SIZES.extraLarge,
+    paddingBottom: "8%",
+    paddingLeft: "20%",
+    paddingRight: "20%",
+    color: COLORS.gray,
+    textAlign: 'center',
+  },
+  normalText:{
+    fontSize: SIZES.medium,
+    color: COLORS.white
+  },
+  input: {
+    height: "6%",
+    width: "60%",
+    margin: "5%",
+    borderWidth: 1,
+    padding: "5%",
+    color: COLORS.white,
+    borderColor: COLORS.white
+  },
+  loginButton:{
+    marginRight:40,
+    marginLeft:40,
+    marginTop:20,
+    paddingTop:"3%",
+    paddingBottom:"3%",
+    width: "40%",
+    backgroundColor: COLORS.gray,
+    borderRadius:8,
+    borderWidth: 1,
+    borderColor: COLORS.white
+  },
+  loginText:{
+    color: COLORS.white,
+    textAlign:'center',
+    paddingLeft : 10,
+    paddingRight : 10,
+    fontSize: SIZES.medium
+  },
+  createAccount:{
+    paddingTop: "10%",
+    color: COLORS.white,
+    textDecorationLine: 'underline',
+    fontSize: SIZES.medium
+  }
 });
