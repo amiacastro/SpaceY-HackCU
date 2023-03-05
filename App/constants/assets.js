@@ -32,6 +32,9 @@ import acquainted from "../assets/images/acquainted.png";
 import favicon from "../assets/images/favicon.png";
 
 import gradient from "../assets/images/gradient.png";
+import gradient2 from "../assets/images/gradient2.png";
+import gradient3 from "../assets/images/gradient3.png";
+import gradient4 from "../assets/images/gradient4.png";
 
 export default {
   badge,
@@ -68,4 +71,7 @@ export default {
   favicon,
 
   gradient,
+  gradient2,
+  gradient3,
+  gradient4,
 };
