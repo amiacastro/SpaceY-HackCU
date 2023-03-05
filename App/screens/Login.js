@@ -1,6 +1,6 @@
 import React from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, SafeAreaView, TouchableHighlight, TextInput, ImageBackground } from 'react-native';
+import { StyleSheet, Text, SafeAreaView, TouchableHighlight, TextInput, ImageBackground, Image, View } from 'react-native';
 import { COLORS, SIZES, FONTS, assets } from '../constants';
 
 import ViewModelInstance from '../ViewModel';
@@ -12,8 +12,15 @@ export default function Login({ navigation }) {
     <ImageBackground source={assets.gradient} resizeMode="cover" style={styles.image}>
       <SafeAreaView style={styles.container}>
 
-        <Text style={styles.title}>Welcome to Huddle!</Text>
-        <Text style={styles.subtitle}>Create an Account or Login Below</Text>
+        {/* <View style={{flex:1,alignItems:"center",justifyContent:"center"}}> */}
+          <Text style={styles.title}>Welcome to Huddle!</Text>
+          <Image
+            style={styles.tinyLogo}
+            source={assets.huddle}
+          />
+          <Text style={styles.subtitle}>Create an Account or Login Below</Text>
+
+        {/* </View> */}
         <Text style={styles.normalText}>Username: </Text>
         <TextInput
           style={styles.input}
@@ -49,7 +56,7 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: SIZES.title,
-    paddingBottom: "10%",
+    paddingBottom: "3%",
     color: COLORS.pastel_medium_blue,
     textAlign: 'center',
   },
@@ -58,8 +65,9 @@ const styles = StyleSheet.create({
     paddingBottom: "8%",
     paddingLeft: "20%",
     paddingRight: "20%",
+    paddingTop: "0%",
     color: COLORS.gray,
-    textAlign: 'center',
+    textAlign: 'center'
   },
   normalText: {
     fontSize: SIZES.medium,
@@ -95,9 +103,14 @@ const styles = StyleSheet.create({
   },
   createAccount: {
     paddingTop: "10%",
+    paddingBottom: 5,
     color: COLORS.pastel_light_blue,
     textDecorationLine: 'underline',
     fontSize: SIZES.medium
+  },
+  tinyLogo: {
+    width: 170,
+    height: 170,
   },
   image: {
     flex: 1,
