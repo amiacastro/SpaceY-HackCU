@@ -34,7 +34,7 @@
 // export default Profile;
 
 
-import {  View, SafeAreaView, Text, StyleSheet } from 'react-native';
+import {  View, SafeAreaView, Text, StyleSheet, Image } from 'react-native';
 import ViewModelInstance from '../ViewModel';
 
 const Profile = ({ navigation }) => {
