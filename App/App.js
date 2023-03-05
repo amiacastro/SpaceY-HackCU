@@ -2,11 +2,13 @@ import { StyleSheet, Text, View } from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
 import { useFonts } from 'expo-font';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import Home from './screens/Home';
 import Friends from './screens/Friends';
+import { NavigationBar } from './components';
 
-const Stack = createStackNavigator();
+const Tab = createBottomTabNavigator();
 
 const theme = {
   ... DefaultTheme,
@@ -26,15 +28,14 @@ const App = () => {
   });
 
   return (
-      <NavigationContainer theme={theme}>
-          <Stack.Navigator 
+    <NavigationContainer theme={theme}>
+          <Tab.Navigator 
           screenOptions={{ headerShown: false}}
           initialRouteName = "Home"
-
           >
-            <Stack.Screen name ="Home" component={Home}/>
-            <Stack.Screen name ="Friends" component={Friends}/>
-          </Stack.Navigator>
+            <Tab.Screen name ="Home" component={Home}/>
+            <Tab.Screen name ="Friends" component={Friends}/>
+          </Tab.Navigator>
       </NavigationContainer>
   );
 }
