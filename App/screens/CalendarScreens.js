@@ -9,18 +9,18 @@ import NewEvent from './NewEvent';
 const Stack = createStackNavigator();
 
 
-const CalenderScreens = ({Navigator}) => {
+const CalendarScreens = () => {
   return (
-        <NavigationContainer theme={theme}>
-              <Stack.Navigator 
+        <NavigationContainer independent={true}>
+              <Stack.Navigator
               screenOptions={{ headerShown: false}}
-              initialRouteName = "Calender"
+              initialRouteName = "Calendar"
               >
-                <Stack.Screen name ="Calender" component={Calendar}/>
-                <Stack.Screen name ="NewEvent" component={NewEvent}/>
+                    <Stack.Screen name="Calender" component={Calendar}/>
+                    <Stack.Screen name="NewEvent" component={NewEvent}/>
               </Stack.Navigator>
           </NavigationContainer>
   )
 }
 
-export default CalenderScreens
+export default CalendarScreens
