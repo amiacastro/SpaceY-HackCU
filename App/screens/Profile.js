@@ -69,7 +69,7 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        marginTop: 22,
+        marginTop: 450,
         alignItems: 'center'
     },
     modalContent: {
@@ -84,7 +84,7 @@ const styles = StyleSheet.create({
     },
     close: {
         fontSize: SIZES.large,
-        fontWeight: FONTS.bold,
+        fontWeight: 'bold',
     }
 
 });
