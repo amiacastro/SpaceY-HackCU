@@ -13,10 +13,10 @@ const ProfileHeader = ({ username }) => {
             <Text style={styles.greeting} >
                 {username}
             </Text>
-            <Pressable
+            {/* <Pressable
                 onPress={() => ViewModelInstance.setModal(true)}>
                 <Text>Openupbitch</Text>
-            </Pressable>
+            </Pressable> */}
             {/* <Modal
                 animationType="type"
                 transparent={true}

@@ -1,10 +1,11 @@
 import { useState } from 'react';
-import { View, SafeAreaView, Text, StyleSheet, Image, Alert, Modal, Pressable } from 'react-native';
-import { ProfileHeader } from '../components';
+import { View, SafeAreaView, Text, StyleSheet, Image, Alert, Modal, Pressable, FlatList } from 'react-native';
+import { ProfileHeader, ModalCard } from '../components';
 import ViewModelInstance from '../ViewModel';
 
 const Profile = ({ navigation }) => {
     const [modalVisible, setModalVisible] = useState(false);
+
     return (
         <SafeAreaView>
             {/* Header */}
@@ -21,26 +22,36 @@ const Profile = ({ navigation }) => {
                 onRequestClose={() => {
                     Alert.alert('Modal has been closed.');
                     setModalVisible(!modalVisible);
-                    // ViewModelInstance.setModal(false);
                     // ViewModelInstance.setModal(!ViewModelInstance.modalVisible);
                     // ViewModelInstance.modalVisible = !ViewModelInstance.modalVisible;
                 }}>
                 <View>
-                    <Text>Settings</Text>
                     <Pressable
-                        // onPress={() => ViewModelInstance.setModal(false)}>
-                        // onPress={() => ViewModelInstance.setModal(!ViewModelInstance.modalVisible)}>
                         // onPress={() => ViewModelInstance.modalVisible = !ViewModelInstance.modalVisible}>                        
+                        // onPress={() => ViewModelInstance.setModal(!ViewModelInstance.modalVisible)}>
                         onPress={() => setModalVisible(!modalVisible)}>
-
                         <Text>Close</Text>
                     </Pressable>
+                    <FlatList 
+                        data={ViewModelInstance.modalOptions}
+                        // renderItem={({item}) => <Text>{item.name}</Text>}
+                        renderItem={({item}) => <ModalCard data={item} />}
+                        keyExtractor={(item) => item.id}
+                    />
+                    {/* <Text>Settings</Text>
+                    <Text>Friends</Text>
+                    <Text>Contacts</Text>
+                    <Text>Your Activity</Text>
+                    <Text>Archive</Text>
+                    <Text>Saved</Text>
+                    <Text>Favorited</Text>
+                    <Text>Acquantances</Text>
+                    <Text>Close Friends</Text>
+                    <Text>Favorites</Text> */}
                 </View>
             </Modal>
-            <Pressable
-
-                // onPress={() => ViewModelInstance.setModal(true)}>  
-                // onPress={() => ViewModelInstance.modalVisible = !ViewModelInstance.modalVisible}>
+            <Pressable        
+                // onPress={() => ViewModelInstance.setModal(true)}>       
                 onPress={() => setModalVisible(true)}>
                 <Text>Openfffffffffffffffffffffffffff</Text>
             </Pressable>
@@ -58,7 +69,8 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         padding: 5,
         justifyContent: 'center',
-    }
+    },
+
 });
 
 export default Profile;

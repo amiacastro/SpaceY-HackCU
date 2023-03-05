@@ -1,4 +1,4 @@
-import { Users } from './constants';
+import { Users, modalOptions } from './constants';
 
 class ViewModel {
     constructor() {
@@ -6,7 +6,8 @@ class ViewModel {
         this.firstname;
         this.friends;
         this.searchFriendsResults;
-        this.modalVisible;
+        this.modalVisible = false;
+        this.modalOptions;
     }
 
     login(username, password, navigation) {
@@ -24,6 +25,7 @@ class ViewModel {
         this.friends = Users[0].friends;;
         this.firstname = Users[0].firstname;
         this.modalVisible = false;
+        this.modalOptions = modalOptions;
         console.log("User: " + this.user.username + " logged in");
         navigation.navigate('AppScreens');
     }
