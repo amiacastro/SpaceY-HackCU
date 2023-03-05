@@ -1,7 +1,7 @@
 import React from 'react'
-import { SafeAreaView, TextInput, Text, StyleSheet, View, TouchableHighlight } from 'react-native'
+import { SafeAreaView, TextInput, Text, StyleSheet, View, TouchableHighlight, ImageBackground } from 'react-native'
 import { SelectList, MultipleSelectList } from 'react-native-dropdown-select-list'
-import { COLORS, SIZES, FONTS} from '../constants';
+import { COLORS, SIZES, FONTS, assets} from '../constants';
 
 import ViewModelInstance from '../ViewModel';
 
@@ -35,81 +35,83 @@ const NewEvent = ({navigation}) => {
     navigation.navigate("Calendar");
   };
   return (
-    <SafeAreaView style={styles.container}>
-      <Text style={styles.title}>Schedule an Event</Text>
-      <Text style={styles.subtitle}>Title: </Text>
-      <TextInput
-          style={styles.inputTitle}
-          onChangeText={(val) => onChangeTitle(val)}
-          value={title}
-        />
-      <Text style={styles.subtitle}>Description: </Text>
-      <TextInput
-          multiline
-          style={styles.inputDesc}
-          onChangeText={(val) => onChangeDesc(val)}
-          value={description}
-        />
-      <Text style={styles.subtitle}>Friends: </Text>
-      <MultipleSelectList style={styles.dropdown}
-          setSelected={(val) => onChangeFriends(val)} 
-          placeholder = "Friends"
-          data={friends} 
-          dropdownTextStyles = {{color: COLORS.gray}}
-          inputStyles = {{color: COLORS.gray}}
-          save="value"
-          menuPlacement="auto"
-          menuPosition="fixed"
-        />
-      <Text style={styles.subtitle}>Time: </Text>
-      <View style={styles.time}>
-        <SelectList style={styles.dropdown}
-          setSelected={(val) => onChangeHour(val)} 
-          placeholder = "Hour"
-          data={hours} 
-          dropdownTextStyles = {{color: COLORS.gray}}
-          inputStyles = {{color: COLORS.gray}}
-          save="value"
-          menuPlacement="auto"
-          menuPosition="fixed"
-        />
-        <SelectList 
-          setSelected={(val) => onChangeMin(val)} 
-          placeholder = "Minute"
-          dropdownTextStyles = {{color: COLORS.gray}}
-          inputStyles = {{color: COLORS.gray}}
-          data={mins} 
-          save="value"
-          menuPlacement="auto"
-          menuPosition="fixed"
-        />
-        <SelectList 
-          setSelected={(val) => onChangeAM(val)} 
-          placeholder = "AM/PM"
-          dropdownTextStyles = {{color: COLORS.gray}}
-          inputStyles = {{color: COLORS.gray}}
-          data={ampms} 
-          save="value"
-          menuPlacement="auto"
-          menuPosition="fixed"
-        />
-      </View>
-      <View style={styles.buttonView}>
-        <TouchableHighlight
-            style={styles.buttonCreate}
-            onPress={() => onPress()}
-            underlayColor="#DDDDDD">
-            <Text style={styles.buttonText}>Create</Text>
-        </TouchableHighlight>
-        <TouchableHighlight
-            style={styles.buttonCancel}
-            onPress={() => onPress()}
-            underlayColor="#DDDDDD">
-            <Text style={styles.buttonText}>Cancel</Text>
-        </TouchableHighlight>
-      </View>
+    <ImageBackground source={assets.gradient7} resizeMode="cover" style={styles.image}>
+      <SafeAreaView style={styles.container}>
+        <Text style={styles.title}>Schedule an Event</Text>
+        <Text style={styles.subtitle}>Title: </Text>
+        <TextInput
+            style={styles.inputTitle}
+            onChangeText={(val) => onChangeTitle(val)}
+            value={title}
+          />
+        <Text style={styles.subtitle}>Description: </Text>
+        <TextInput
+            multiline
+            style={styles.inputDesc}
+            onChangeText={(val) => onChangeDesc(val)}
+            value={description}
+          />
+        <Text style={styles.subtitle}>Friends: </Text>
+        <MultipleSelectList style={styles.dropdown}
+            setSelected={(val) => onChangeFriends(val)} 
+            placeholder = "Friends"
+            data={friends} 
+            dropdownTextStyles = {{color: COLORS.gray}}
+            inputStyles = {{color: COLORS.gray}}
+            save="value"
+            menuPlacement="auto"
+            menuPosition="fixed"
+          />
+        <Text style={styles.subtitle}>Time: </Text>
+        <View style={styles.time}>
+          <SelectList style={styles.dropdown}
+            setSelected={(val) => onChangeHour(val)} 
+            placeholder = "Hour"
+            data={hours} 
+            dropdownTextStyles = {{color: COLORS.gray}}
+            inputStyles = {{color: COLORS.gray}}
+            save="value"
+            menuPlacement="auto"
+            menuPosition="fixed"
+          />
+          <SelectList 
+            setSelected={(val) => onChangeMin(val)} 
+            placeholder = "Minute"
+            dropdownTextStyles = {{color: COLORS.gray}}
+            inputStyles = {{color: COLORS.gray}}
+            data={mins} 
+            save="value"
+            menuPlacement="auto"
+            menuPosition="fixed"
+          />
+          <SelectList 
+            setSelected={(val) => onChangeAM(val)} 
+            placeholder = "AM/PM"
+            dropdownTextStyles = {{color: COLORS.gray}}
+            inputStyles = {{color: COLORS.gray}}
+            data={ampms} 
+            save="value"
+            menuPlacement="auto"
+            menuPosition="fixed"
+          />
+        </View>
+        <View style={styles.buttonView}>
+          <TouchableHighlight
+              style={styles.buttonCreate}
+              onPress={() => onPress()}
+              underlayColor="#DDDDDD">
+              <Text style={styles.buttonText}>Create</Text>
+          </TouchableHighlight>
+          <TouchableHighlight
+              style={styles.buttonCancel}
+              onPress={() => onPress()}
+              underlayColor="#DDDDDD">
+              <Text style={styles.buttonText}>Cancel</Text>
+          </TouchableHighlight>
+        </View>
 
-    </SafeAreaView>
+      </SafeAreaView>
+    </ImageBackground>
   )
 }
 const styles = StyleSheet.create({
@@ -190,6 +192,12 @@ const styles = StyleSheet.create({
   },
   buttonView:{
     flexDirection: "row",
+  },
+  image: {
+    flex: 1,
+    justifyContent: 'center',
+    width: '100%',
+    height: '100%',
   }
 });
 
