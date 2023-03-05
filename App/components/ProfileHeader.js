@@ -1,10 +1,12 @@
 import React from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { useState } from 'react';
+import { View, Text, StyleSheet, Pressable } from "react-native";
 import { Modal } from "react-native-paper";
 
 import { COLORS, FONTS, SIZES, assets } from "../constants";
 
 const ProfileHeader = ({ username }) => {
+    const [modalVisible, setModalVisible] = useState(false);
     return (
         <View style={styles.container}>
             <Text style={styles.greeting} >
@@ -18,8 +20,18 @@ const ProfileHeader = ({ username }) => {
                     Alert.alert('Modal has been closed.');
                     setModalVisible(!modalVisible);
             }}>
-
+                <View>
+                    <Text>Settings</Text>
+                    <Pressable
+                        onPress={() => setModalVisible(!modalVisible)}>
+                        <Text>Close</Text>
+                    </Pressable>
+                </View>
             </Modal>
+            <Pressable
+                onPress={() => setModalVisible(true)}>
+                <Text>Open</Text>
+            </Pressable>
         </View>
     );
 }
