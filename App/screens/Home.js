@@ -13,7 +13,7 @@ const Home = ({navigation}) => {
 
       <View style={{ flex: 1}}>
         <View style={{zIndex: 0}}>
-          <Text>TEst</Text>
+          <Text>This is the Home Page</Text>
           <Button
             title="Go to Friends"
             onPress={() => navigation.navigate('Friends')}
