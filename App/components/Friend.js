@@ -11,7 +11,7 @@ const Friend = ({friend}) => {
     if (ViewModelInstance.otherUsers.includes(friend)) {
         requestButton = <View style={{flex: 1, flexDirection: "row", gap: 15, justifyContent: 'flex-end', alignItems: "center", fontSize: SIZES.medium}}>
                             <Pressable onPress={() => {Alert.alert("Yay!","Friend request sent.")}}>
-                                <Text style={{color: COLORS.pastel_darker_blue }}>Add</Text>
+                                <Text style={{color: "blue" }}>Add</Text>
                             </Pressable>
                         </View>
     }
