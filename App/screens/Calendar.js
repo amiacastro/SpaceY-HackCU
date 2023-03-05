@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
-import {SafeAreaView, TouchableOpacity, Text, StyleSheet, TouchableHighlight} from 'react-native';
+import {SafeAreaView, TouchableOpacity, Text, Image, StyleSheet, TouchableHighlight} from 'react-native';
 import {Agenda} from 'react-native-calendars';
-import {Card, Avatar} from 'react-native-paper';
+import {Card} from 'react-native-paper';
 import { COLORS, SIZES, FONTS} from '../constants';
 import { createStackNavigator } from '@react-navigation/stack';
 
@@ -72,7 +72,7 @@ const Calendar = () => {
                 
               }}>
               <Text>{item.title}</Text>
-              <Avatar.Text label={item.host.name[0]}/>
+              <Image source={item.image} style={{width: 50, height: 50, borderRadius: 25}}/>
             </SafeAreaView>
           </Card.Content>
         </Card>
