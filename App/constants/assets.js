@@ -18,6 +18,17 @@ import person02 from "../assets/images/person02.png";
 import person03 from "../assets/images/person03.png";
 import person04 from "../assets/images/person04.png";
 
+import activity from "../assets/images/activity.png";
+import archive from "../assets/images/archive.png";
+import closeFriends from "../assets/images/closeFriends.png";
+import contacts from "../assets/images/contacts.png";
+import favorited from "../assets/images/favorited.png";
+import friends from "../assets/images/friends.png";
+import inbox from "../assets/images/inbox.png";
+import saved from "../assets/images/saved.png";
+import settings from "../assets/images/settings.png";
+import acquainted from "../assets/images/acquainted.png";
+
 export default {
   badge,
   eth,
@@ -38,4 +49,15 @@ export default {
   person02,
   person03,
   person04,
+
+  activity,
+  archive,
+  closeFriends,
+  contacts,
+  favorited,
+  friends,
+  inbox,
+  saved,
+  settings,
+  acquainted,
 };

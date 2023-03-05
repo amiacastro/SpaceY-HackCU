@@ -2,17 +2,24 @@ import React from "react";
 import { useState } from 'react';
 import { View, Text, StyleSheet, Pressable } from "react-native";
 import { Modal } from "react-native-paper";
+import { FocusedStatusBar } from "../components";
 
 import { COLORS, FONTS, SIZES, assets } from "../constants";
+import ViewModelInstance from "../ViewModel";
 
 const ProfileHeader = ({ username }) => {
     const [modalVisible, setModalVisible] = useState(false);
     return (
         <View style={styles.container}>
-            <Text style={styles.greeting} >
+            <FocusedStatusBar />
+            <Text style={styles.username} >
                 {username}
             </Text>
-            <Modal
+            {/* <Pressable
+                onPress={() => ViewModelInstance.setModal(true)}>
+                <Text>Openupbitch</Text>
+            </Pressable> */}
+            {/* <Modal
                 animationType="type"
                 transparent={true}
                 visible={modalVisible}
@@ -31,7 +38,7 @@ const ProfileHeader = ({ username }) => {
             <Pressable
                 onPress={() => setModalVisible(true)}>
                 <Text>Open</Text>
-            </Pressable>
+            </Pressable> */}
         </View>
     );
 }
@@ -42,7 +49,12 @@ const styles = StyleSheet.create({
         backgroundColor: COLORS.pastel_darker_blue,
         padding: SIZES.font,
         flexDirection: "row",
+        // marginTop: 30,
+        height: 60,
     },
+    username: {
+        
+    }
 });
 
 export default ProfileHeader;
