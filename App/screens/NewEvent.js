@@ -7,6 +7,8 @@ import ViewModelInstance from '../ViewModel';
 
 
 const NewEvent = ({navigation}) => {
+  const [title, onChangeTitle] = React.useState('');
+  const [description, onChangeDesc] = React.useState('');
   const [friend, onChangeFriends] = React.useState('');
   const [hour, onChangeHour] = React.useState("");
   const [min, onChangeMin] = React.useState("");
@@ -35,6 +37,19 @@ const NewEvent = ({navigation}) => {
   return (
     <SafeAreaView style={styles.container}>
       <Text style={styles.title}>Schedule an Event</Text>
+      <Text style={styles.subtitle}>Title: </Text>
+      <TextInput
+          style={styles.inputTitle}
+          onChangeText={(val) => onChangeTitle(val)}
+          value={title}
+        />
+      <Text style={styles.subtitle}>Description: </Text>
+      <TextInput
+          multiline
+          style={styles.inputDesc}
+          onChangeText={(val) => onChangeDesc(val)}
+          value={description}
+        />
       <Text style={styles.subtitle}>Friends: </Text>
       <MultipleSelectList style={styles.dropdown}
           setSelected={(val) => onChangeFriends(val)} 
@@ -105,22 +120,31 @@ const styles = StyleSheet.create({
   },
   title:{
     fontSize: SIZES.extraLarge,
-    padding: "10%",
+    paddingTop: "10%",
     color: COLORS.text,
     textAlign: 'center',
   },
   subtitle:{
     fontSize: SIZES.large,
-    paddingBottom: "8%",
-    paddingTop: "8%",
+    paddingBottom: "1%",
+    paddingTop: "3%",
     paddingLeft: "20%",
     paddingRight: "20%",
     color: COLORS.gray,
     textAlign: 'center',
   },
-  input: {
-    height: "8%",
-    width: "60%",
+  inputTitle: {
+    height: "6%",
+    width: "80%",
+    margin: "5%",
+    borderWidth: 1,
+    padding: "2%",
+    color: COLORS.gray,
+    borderColor: COLORS.gray
+  },
+  inputDesc: {
+    height: "10%",
+    width: "80%",
     margin: "5%",
     borderWidth: 1,
     padding: "2%",
@@ -136,7 +160,7 @@ const styles = StyleSheet.create({
   buttonCreate:{
     marginRight:20,
     marginLeft:20,
-    marginTop:60,
+    marginTop:45,
     paddingTop:"3%",
     paddingBottom:"3%",
     width: "30%",
@@ -148,7 +172,7 @@ const styles = StyleSheet.create({
   buttonCancel:{
     marginRight:20,
     marginLeft:20,
-    marginTop:60,
+    marginTop:45,
     paddingTop:"3%",
     paddingBottom:"3%",
     width: "30%",
