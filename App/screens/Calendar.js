@@ -14,7 +14,7 @@ const Calendar = () => {
 
   //TODO: read events and labels from a file instead
   const events = []
-  for (let i = 0; i < 5; i++) {
+  for (let i = 0; i < 0; i++) {
     events[i] = "Event number " + i
   }
   const labels = ["A", "B", "C", "D", "E"]
@@ -103,13 +103,16 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   emptyDateContainer: {
+    height: 80,
+    flex: 1,
+    paddingTop: 50,
     alignItems: 'center',
     justifyContent: 'center',
   },
   emptyDateText: {
     fontSize: SIZES.medium,
     color: COLORS.gray,
-    textAlign:'center',
+    fontFamily: FONTS.medium
   },
   createEventContainer:{
     alignItems: 'center',
