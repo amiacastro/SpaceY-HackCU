@@ -3,6 +3,7 @@ import {SafeAreaView, TouchableOpacity, Text, StyleSheet, TouchableHighlight} fr
 import {Agenda} from 'react-native-calendars';
 import {Card, Avatar} from 'react-native-paper';
 import { COLORS, SIZES, FONTS} from '../constants';
+import { createStackNavigator } from '@react-navigation/stack';
 
 const timeToString = (time) => {
   const date = new Date(time);
@@ -78,7 +79,8 @@ const Calendar = () => {
             <TouchableHighlight
                 style={styles.createEventButton}
                 onPress={() => console.log("creating event")}
-                underlayColor="#DDDDDD">
+                // onPress={() => NavigationPreloadManager.navigate("NewEvent")}
+                underlayColor="primary">
                 <Text style={styles.createEventText}>Create Event</Text>
             </TouchableHighlight>
       </SafeAreaView>
