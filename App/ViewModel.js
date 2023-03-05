@@ -42,27 +42,23 @@ class ViewModel {
     }
 
     login(username, password, navigation) {
-        // const user = Users.find((user) => user.username.toLowerCase() === username.toLowerCase() && user.password === password);
+        const user = Users.find((user) => user.username.toLowerCase() === username.toLowerCase() && user.password === password);
 
-        // if (user) {
-        //     this.user = user;
-        //     this.friends = user.friends;
-        //     this.searchedFriends = user.friends;
-        //     navigation.navigate('AppScreens');
-        // } else {
-        //     alert("Invalid username or password");
-        // }
-        this.user = Users[0];
-        this.otherUsers = this.user.others;
-        this.friends = this.user.friends;
-        this.searchFriendsResults = this.user.friends;
-        this.firstname = this.user.firstname;
-        this.friendRequests = this.user.requests;
-        this.modalVisible = false;
-        this.events = Events;
-        this.modalOptions = modalOptions;
-        console.log("User: " + this.user.username + " logged in");
-        navigation.navigate('AppScreens');
+        if (user) {
+            this.user = user;
+            this.otherUsers = this.user.others;
+            this.friends = this.user.friends;
+            this.searchFriendsResults = this.user.friends;
+            this.firstname = this.user.firstname;
+            this.friendRequests = this.user.requests;
+            this.modalVisible = false;
+            this.events = Events;
+            this.modalOptions = modalOptions;
+            navigation.navigate('AppScreens');
+            console.log("User: " + this.user.username + " logged in");
+        } else {
+            alert("Invalid username or password");
+        }
     }
 
     newEvent(friends, hour, min, ampm, title, description){
