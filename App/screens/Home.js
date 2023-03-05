@@ -3,7 +3,7 @@ import { Button, View, SafeAreaView, FlatList, Text, StyleSheet } from 'react-na
 import { COLORS } from '../constants';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-import { HomeHeader, FocusedStatusBar} from '../components';
+import { HomeHeader, FocusedStatusBar, Calendar} from '../components';
 
 import ViewModelInstance from '../ViewModel';
 
@@ -15,7 +15,7 @@ const Home = ({ navigation }) => {
       <View style={{ flex: 1}}>
         <View style={{zIndex: 0}}>
         <HomeHeader name={ViewModelInstance.name}/>
-          <Text>This is the Home Page</Text>
+        <Text>This is the Home Page</Text>
         </View>
       </View>
     </SafeAreaView>

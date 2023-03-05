@@ -37,7 +37,7 @@ const HomeHeader = ({name}) => {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: COLORS.primary,
+    backgroundColor: COLORS.pastel_darker_blue,
     padding: SIZES.font,
   },
   spacing: {
@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
   header: {
     fontFamily: FONTS.bold,
     fontSize: SIZES.large,
-    color: COLORS.white,
+    color: COLORS.paste,
     marginTop: SIZES.base / 2,
   },
   searchBar: {

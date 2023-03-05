@@ -3,6 +3,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import Home from './Home';
 import Friends from './Friends'
+import Calendar from './Calendar';
 
 const Tab = createBottomTabNavigator();
 
@@ -13,6 +14,7 @@ const AppScreens = () => {
         initialRouteName = "Home"
     >
       <Tab.Screen name="Home" component={Home} />
+      <Tab.Screen name="Calendar" component={Calendar} />
       <Tab.Screen name="Friends" component={Friends} />
     </Tab.Navigator>
   );
