@@ -3,14 +3,14 @@ import { View, Text, Image, TextInput, StyleSheet } from "react-native";
 
 import { COLORS, FONTS, SIZES, assets } from "../constants";
 
-const HomeHeader = (onSearch) => {
+const HomeHeader = ({name}) => {
   return (
     <View style={styles.container}>
       <View style={styles.spacing}>
       </View>
       <View style={{ marginVertical: SIZES.font }}>
         <Text style={styles.greeting} >
-          Hello Victoria 👋
+          Hello {name} 👋
         </Text>
         <Text style={styles.header}>
         This is the Home Page

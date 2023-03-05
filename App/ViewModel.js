@@ -18,6 +18,7 @@ class ViewModel {
         // } else {
         //     alert("Invalid username or password");
         // }
+        this.user = Users[0];
         navigation.navigate('AppScreens');
     }
 

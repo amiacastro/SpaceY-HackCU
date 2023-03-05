@@ -5,6 +5,8 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import { HomeHeader, FocusedStatusBar} from '../components';
 
+import ViewModelInstance from '../ViewModel';
+
 const Home = ({ navigation }) => {
     return (
         <SafeAreaView style={styles.container}>
@@ -12,7 +14,7 @@ const Home = ({ navigation }) => {
 
       <View style={{ flex: 1}}>
         <View style={{zIndex: 0}}>
-        <HomeHeader/>
+        <HomeHeader name={ViewModelInstance.name}/>
           <Text>This is the Home Page</Text>
         </View>
       </View>

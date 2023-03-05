@@ -5,7 +5,8 @@ const Users = [
         id: 1,
         username: "aphan",
         password: "12345",
-        name: "Albert Phan",
+        firstname: "Albert",
+        lastname: "Phan",
         image: assets.person01,
         friends: [
             {
