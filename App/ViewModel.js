@@ -15,6 +15,7 @@ class ViewModel {
         this.friendRequests;
         
         this.FriendListRef;
+        this.AgendaRef;
     }
 
     getEvents() {
@@ -64,8 +65,20 @@ class ViewModel {
         navigation.navigate('AppScreens');
     }
 
-    newEvent(friends, hour, min, ampm){
-        
+    newEvent(friends, hour, min, ampm, title, description){
+        let event = {
+            id: (friends.length+1)/2*hour*min,
+            title: title,
+            description: description,
+            time: hour + ":" + min + " " + ampm,
+            date: "",
+            host: this.user,
+            attendees: friends,
+            image: this.user.image,
+            location: "TBD"
+        }
+        console.log(event);
+        this.events[17].push(event);
     }
 
     searchFriends(value) {

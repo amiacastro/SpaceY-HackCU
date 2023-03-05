@@ -28,7 +28,13 @@ const Calendar = ({ navigation }) => {
   //   dayLabels1 = ["A", "B"];
   //   dayLabels3 = ["C", "D"];
   //   const labels = [dayLabels1, dayLabels2, dayLabels3];
-  const events = ViewModelInstance.getEvents();
+  const [events, setEvents] = useState(ViewModelInstance.getEvents());
+
+  const onPress = () => {
+    ViewModelInstance.newEvent(friend, hour, min, ampm, title, description);
+    setEvents(ViewModelInstance.getEvents());
+    navigation.navigate("Calendar");
+  };
 
 
   const loadItems = (day) => {
@@ -102,6 +108,9 @@ const Calendar = ({ navigation }) => {
           </TouchableHighlight>
         </SafeAreaView>
         <Agenda
+            ref={(ref) => {
+                ViewModelInstance.AgendaRef = ref;
+            }}
           items={items}
           loadItemsForMonth={loadItems}
           selected={'2023-03-04'}
