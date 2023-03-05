@@ -4,7 +4,9 @@ class ViewModel {
     constructor() {
         this.user;
         this.firstname;
+
         this.friends;
+        this.otherUsers;
 
         this.searchFriendsResults;
         this.modalVisible = false;
@@ -26,9 +28,11 @@ class ViewModel {
         //     alert("Invalid username or password");
         // }
         this.user = Users[0];
+        this.otherUsers = Users[0].others;
         this.friends = Users[0].friends;
         this.searchFriendsResults = Users[0].friends;
         this.firstname = Users[0].firstname;
+        this.friendRequests = Users[0].requests;
         this.modalVisible = false;
         this.modalOptions = modalOptions;
         console.log("User: " + this.user.username + " logged in");
@@ -46,14 +50,21 @@ class ViewModel {
             animated: true,
             index: 0,
             viewPosition: 0
-        })
-        const filteredData = this.friends.filter((item) => {
-            let name = item.firstname + " " + item.lastname;
-            name.toLowerCase().includes(value.toLowerCase())
         });
 
-        if (filteredData.length) {
-            this.searchFriendsResults = filteredData;
+        const filteredData = this.friends.filter((item) =>
+            item.firstname.toLowerCase().includes(value.toLowerCase()));
+
+        const filteredData2 = this.friends.filter((item) =>
+            item.firstname.toLowerCase().includes(value.toLowerCase()));
+
+        const filteredData3 = this.otherUsers.filter((user) =>
+            user.username.toLowerCase().includes(value.toLowerCase()));
+
+        const finalFiltered = [...new Set([...filteredData, ...filteredData2, ...filteredData3])];
+
+        if (finalFiltered.length) {
+            this.searchFriendsResults = finalFiltered;
         } else {
             this.searchFriendsResults = this.friends;
         }
