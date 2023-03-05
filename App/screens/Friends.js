@@ -5,7 +5,6 @@ import { FriendData } from '../constants';
 const Friends = ({navigation}) => {
     return (
         <SafeAreaView style={{ flex:1 }}>
-            <Button title="Go to Home" onPress={() => navigation.navigate('Home')} style={{zIndex: 1}} />
             {<HomeHeader/>}
             <FlatList 
                 data={FriendData}

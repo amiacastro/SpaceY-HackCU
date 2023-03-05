@@ -7,3 +7,5 @@ class ViewModel {
 }
 
 let viewModel = new ViewModel();
+
+export default viewModel;

@@ -14,10 +14,6 @@ const Home = ({navigation}) => {
         <View style={{zIndex: 0}}>
         <HomeHeader/>
           <Text>This is the Home Page</Text>
-          <Button
-            title="Go to Friends"
-            onPress={() => navigation.navigate('Friends')}
-          />
         </View>
       </View>
     </SafeAreaView>
