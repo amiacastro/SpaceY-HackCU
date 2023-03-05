@@ -29,6 +29,9 @@ import inbox from "../assets/images/inbox.png";
 import saved from "../assets/images/saved.png";
 import settings from "../assets/images/settings.png";
 import acquainted from "../assets/images/acquainted.png";
+import favicon from "../assets/images/favicon.png";
+
+import gradient from "../assets/images/gradient.png";
 
 export default {
   badge,
@@ -62,4 +65,7 @@ export default {
   saved,
   settings,
   acquainted,
+  favicon,
+
+  gradient,
 };

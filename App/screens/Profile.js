@@ -50,7 +50,7 @@ const Profile = ({ navigation }) => {
                 <Pressable
                     // onPress={() => ViewModelInstance.setModal(true)}>       
                     onPress={() => setModalVisible(true)}>
-                    <Text>Options</Text>
+                    <Text style={styles.optionStyle}>Options</Text>
                 </Pressable>
             </View>
 
@@ -95,6 +95,11 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         fontSize: SIZES.large,
         fontWeight: 'bold'
+    },
+    optionStyle: {
+        fontSize: 15,
+        fontWeight: 'bold',
+        
     }
 
 });
