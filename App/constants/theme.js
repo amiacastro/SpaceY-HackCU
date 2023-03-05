@@ -4,6 +4,11 @@ export const COLORS = {
 
   white: "#FFF",
   gray: "#74858C",
+  black: "#000000",
+  pastel_light_blue: "#B9F3FC",
+  pastel_medium_blue: "#B9F3FC",
+  pastel_darker_blue: "#93C6E7",
+  pastel_pink: "#FEDEFF",
 };
 
 export const SIZES = {
