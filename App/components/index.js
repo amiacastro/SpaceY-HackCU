@@ -5,9 +5,8 @@ import Request from './Request'
 import FriendsHeader from './FriendsHeader'
 import ProfileHeader from './ProfileHeader'
 import ModalCard from './ModalCard'
-// import Calendar from './Calendar'
+import EventCard from './EventCard'
 
 export {
-    HomeHeader, FocusedStatusBar, Friend, FriendsHeader, ProfileHeader, Request, ModalCard
-    // Calendar
+    HomeHeader, FocusedStatusBar, Friend, FriendsHeader, ProfileHeader, Request, ModalCard, EventCard
 }

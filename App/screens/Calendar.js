@@ -5,6 +5,8 @@ import {Card, Avatar} from 'react-native-paper';
 import { COLORS, SIZES, FONTS} from '../constants';
 import { createStackNavigator } from '@react-navigation/stack';
 
+import ViewModelInstance from '../ViewModel';
+
 const timeToString = (time) => {
   const date = new Date(time);
   return date.toISOString().split('T')[0];
@@ -14,18 +16,20 @@ const Calendar = () => {
   const [items, setItems] = useState({});
 
   //TODO: read events and labels from a file instead
-  let dayEvents1 = [];
-  let dayEvents2 = [];
-  let dayEvents3 = [];
-  dayEvents1 = ["Event 1", "Event 2"];
-  dayEvents3 = ["Event 3", "Event 4"];
-  const events = [dayEvents1, dayEvents2, dayEvents3];
-  let dayLabels1 = [];
-  let dayLabels2 = [];
-  let dayLabels3 = [];
-  dayLabels1 = ["A", "B"];
-  dayLabels3 = ["C", "D"];
-  const labels = [dayLabels1, dayLabels2, dayLabels3];
+//   let dayEvents1 = [];
+//   let dayEvents2 = [];
+//   let dayEvents3 = [];
+//   dayEvents1 = ["Event 1", "Event 2"];
+//   dayEvents3 = ["Event 3", "Event 4"];
+//   const events = [dayEvents1, dayEvents2, dayEvents3];
+//   let dayLabels1 = [];
+//   let dayLabels2 = [];
+//   let dayLabels3 = [];
+//   dayLabels1 = ["A", "B"];
+//   dayLabels3 = ["C", "D"];
+//   const labels = [dayLabels1, dayLabels2, dayLabels3];
+    const events = ViewModelInstance.getEvents();
+
 
   const loadItems = (day) => {
     setTimeout(() => {
@@ -34,13 +38,12 @@ const Calendar = () => {
         const time = day.timestamp + i * 24 * 60 * 60 * 1000;
         const strTime = timeToString(time);
         if (!items[strTime]) {
-          items[strTime] = []; 
+          items[strTime] = [];
           if(events[date]!=null){
             const numItems = events[date].length;
             for (let j = 0; j < numItems; j++) {
               items[strTime].push({
-                name: events[date][j],
-                label: labels[date][j],
+                ...events[date][j],
                 height: Math.max(50, Math.floor(Math.random() * 150)),
               });
             }
@@ -68,8 +71,8 @@ const Calendar = () => {
                 alignItems: 'center',
                 
               }}>
-              <Text>{item.name}</Text>
-              <Avatar.Text label={item.label}/>
+              <Text>{item.title}</Text>
+              <Avatar.Text label={item.host.name[0]}/>
             </SafeAreaView>
           </Card.Content>
         </Card>
