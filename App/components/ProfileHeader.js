@@ -4,6 +4,7 @@ import { View, Text, StyleSheet, Pressable } from "react-native";
 import { Modal } from "react-native-paper";
 
 import { COLORS, FONTS, SIZES, assets } from "../constants";
+import ViewModelInstance from "../ViewModel";
 
 const ProfileHeader = ({ username }) => {
     const [modalVisible, setModalVisible] = useState(false);
@@ -12,7 +13,11 @@ const ProfileHeader = ({ username }) => {
             <Text style={styles.greeting} >
                 {username}
             </Text>
-            <Modal
+            <Pressable
+                onPress={() => ViewModelInstance.setModal(true)}>
+                <Text>Openupbitch</Text>
+            </Pressable>
+            {/* <Modal
                 animationType="type"
                 transparent={true}
                 visible={modalVisible}
@@ -31,7 +36,7 @@ const ProfileHeader = ({ username }) => {
             <Pressable
                 onPress={() => setModalVisible(true)}>
                 <Text>Open</Text>
-            </Pressable>
+            </Pressable> */}
         </View>
     );
 }

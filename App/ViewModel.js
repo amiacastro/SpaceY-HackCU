@@ -6,6 +6,7 @@ class ViewModel {
         this.firstname;
         this.friends;
         this.searchFriendsResults;
+        this.modalVisible;
     }
 
     login(username, password, navigation) {
@@ -22,6 +23,7 @@ class ViewModel {
         this.user = Users[0];
         this.friends = Users[0].friends;;
         this.firstname = Users[0].firstname;
+        this.modalVisible = false;
         console.log("User: " + this.user.username + " logged in");
         navigation.navigate('AppScreens');
     }
@@ -41,6 +43,10 @@ class ViewModel {
         } else {
             this.searchFriendsResults = this.friends;
         }
+    }
+
+    setModal(boolVal) {
+        this.modalVisible = boolVal;
     }
 }
 
