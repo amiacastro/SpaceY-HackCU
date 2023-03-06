@@ -32,6 +32,7 @@ const NewEvent = ({navigation}) => {
   const friends = ViewModelInstance.getCalendarFriends();
   const onPress = () => {
     ViewModelInstance.newEvent(friend, hour, min, ampm, title, description);
+    ViewModelInstance.updateAllEvents();
     navigation.navigate("Calendar");
   };
   return (
@@ -104,7 +105,7 @@ const NewEvent = ({navigation}) => {
           </TouchableHighlight>
           <TouchableHighlight
               style={styles.buttonCancel}
-              onPress={() => onPress()}
+              onPress={() => navigation.navigate("Calendar")}
               underlayColor="#DDDDDD">
               <Text style={styles.buttonText}>Cancel</Text>
           </TouchableHighlight>

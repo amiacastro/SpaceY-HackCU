@@ -8,6 +8,7 @@ class ViewModel {
         this.friends;
         this.otherUsers;
         this.events;
+        this.upcomingEvents;
 
         this.searchFriendsResults;
         this.modalVisible = false;
@@ -16,10 +17,14 @@ class ViewModel {
         
         this.FriendListRef;
         this.AgendaRef;
+
+        this.updateCalendarEvents = () => {};
+        this.updateHomeEvents = () => {};
     }
 
-    getEvents() {
-        return this.events;
+    updateAllEvents() {
+        this.updateCalendarEvents();
+        this.updateHomeEvents();
     }
 
     getCalendarFriends() {
@@ -38,6 +43,7 @@ class ViewModel {
             }
         }
         console.log(events)
+        this.upcomingEvents = events;
         return events;
     }
 
@@ -67,13 +73,13 @@ class ViewModel {
             title: title,
             description: description,
             time: hour + ":" + min + " " + ampm,
-            date: "",
+            date: "March 6",
             host: this.user,
             attendees: friends,
             image: this.user.image,
-            location: "TBD"
+            location: "Location TBD"
         }
-        console.log(event);
+        // console.log(this.AgendaRef.state.renderRow());
         this.events[17].push(event);
     }
 

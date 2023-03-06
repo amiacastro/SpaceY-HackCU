@@ -17,7 +17,7 @@ const Friend = ({friend}) => {
     }
 
     return (
-        <Pressable onPress={() => props.navigation.navigate('Friend', {friend: friend})}>
+        <Pressable>
             <View style={{flexDirection: 'row', alignItems: 'center', padding: 10}}>
                 <Image source={friend.image} style={{width: 50, height: 50, borderRadius: 25}} />
                 <View style={{marginLeft: 10}}>

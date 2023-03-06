@@ -5,7 +5,7 @@ import ViewModelInstance from '../ViewModel';
 
 const Request = ({person, handleRequest}) => {
   return (
-    <Pressable onPress={() => props.navigation.navigate('Friend', {friend: person})}>
+    <Pressable>
         <View style={{flexDirection: 'row', alignItems: 'center', padding: 10}}>
             <Image source={person.image} style={{width: 50, height: 50, borderRadius: 25}} />
             <View style={{marginLeft: 10}}>

@@ -7,13 +7,17 @@ import { HomeHeader, FocusedStatusBar, EventCard } from '../components';
 import ViewModelInstance from '../ViewModel';
 
 const Home = ({ navigation }) => {
+    const [events, setEvents] = useState(ViewModelInstance.getUpcomingEvents());
+    ViewModelInstance.updateHomeEvents = () => {
+        setEvents(ViewModelInstance.getUpcomingEvents());
+    };
   return (
     <ImageBackground source={assets.gradient2} resizeMode="cover" style={styles.image}>
       <SafeAreaView style={styles.container}>
         <FocusedStatusBar background={COLORS.primary} />
         <HomeHeader name={ViewModelInstance.firstname} />
         <FlatList
-          data={ViewModelInstance.getUpcomingEvents()}
+          data={events}
           renderItem={({ item }) => <EventCard event={item} />}
           keyExtractor={item => item.id}
           showsVerticalScrollIndicator={false}
